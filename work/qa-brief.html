@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA 주간 브리핑 대시보드 구조 · Twosky Work</title>
+<meta name="description" content="상담 품질 점검 시트를 매일 아침 읽어, 본부 담당자가 자기 본부 확인 사항만 보고 처리 상태를 적는 화면으로 낸다.">
+<meta name="color-scheme" content="dark light">
+<script src="../theme.js"></script>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script src="../data.js" defer></script>
+<script src="../sky.js" defer></script>
+<script src="../app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="../work.html" aria-current="true">Work</a><a href="../game.html">Game</a><a href="../toy.html">Toy</a><a href="../3d.html">3D</a><a href="../all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<nav class="crumb" aria-label="위치"><a href="../work.html">Twosky Work</a><span aria-hidden="true"> / </span>구조도</nav>
+<article class="detail">
+<header class="d-head">
+<h1>QA 주간 브리핑 대시보드</h1>
+<p class="d-sum">상담 품질 점검 시트를 매일 아침 읽어, 본부 담당자가 자기 본부 확인 사항만 보고 처리 상태를 적는 화면으로 낸다.</p>
+<dl class="d-meta"><div><dt>만든 때</dt><dd>2026년 8월</dd></div><div><dt>지금</dt><dd>매일 아침 갱신, 본부 담당자가 사용 중</dd></div><div><dt>쓰는 사람</dt><dd>품질 점검 담당자·본부 담당자</dd></div></dl>
+<ul class="d-stats"><li><b>1일 1회</b><span>자동 갱신</span></li><li><b>3</b><span>권한 단계(관리자·본부 담당자·그 밖)</span></li><li><b>0</b><span>읽어 오는 상담 원문 칸</span></li></ul>
+</header>
+<section class="d-sec reveal" aria-labelledby="h-why">
+<h2 id="h-why">왜 필요했나</h2>
+<p>품질 점검 담당자가 통화를 듣고 본부마다 확인할 사항을 시트에 정리해 전달한다. 본부는 그걸 받아 처리하고 결과를 알려야 한다.</p><p>시트를 그대로 나눠 주면 다른 본부 내용과 상담 원문까지 함께 보이고, 누가 어디까지 처리했는지 한곳에 모이지 않았다.</p>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-map">
+<h2 id="h-map">구조 한눈에</h2>
+<figure class="d-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 764" role="img" aria-labelledby="qa-brief-title qa-brief-desc" font-family="&#39;Malgun Gothic&#39;,&#39;Apple SD Gothic Neo&#39;,sans-serif">
+<title id="qa-brief-title">QA 주간 브리핑 대시보드의 구조</title>
+<desc id="qa-brief-desc">점검 시트에서 정해진 칸만 매일 읽어 화면용 자료로 만들고, 회사 계정 로그인과 본부 명단으로 볼 수 있는 범위를 정한 뒤, 본부 담당자가 처리 결과를 기록한다.</desc>
+<defs><marker id="qa-brief-arrow-code" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker><marker id="qa-brief-arrow-data" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker></defs>
+<rect width="480" height="764" fill="#f3f2ed"/>
+<line x1="156" y1="120" x2="156" y2="148" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="156" y1="216" x2="156" y2="244" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="156" y1="312" x2="156" y2="340" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="156" y1="408" x2="156" y2="436" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="156" y1="504" x2="156" y2="532" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="156" y1="600" x2="156" y2="628" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-code)"/>
+<line x1="324" y1="100" x2="300" y2="100" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-data)"/>
+<line x1="296" y1="556" x2="320" y2="556" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-data)"/>
+<line x1="296" y1="652" x2="320" y2="652" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-brief-arrow-data)"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="76" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="88" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="1">1</text>
+<text x="64" y="84" font-size="20" fill="#252824" font-weight="600">매일 아침 시트 읽기</text>
+<text x="64" y="108" font-size="16" fill="#5b6356">정해진 칸만 골라서</text>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="172" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="184" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="2">2</text>
+<text x="64" y="180" font-size="20" fill="#252824" font-weight="600">칸이 줄면 멈춘다</text>
+<text x="64" y="204" font-size="16" fill="#5b6356">어제 화면을 그대로 둔다</text>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="268" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="280" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="3">3</text>
+<text x="64" y="276" font-size="20" fill="#252824" font-weight="600">화면용 자료로 정리</text>
+<text x="64" y="300" font-size="16" fill="#5b6356">본부·우선순위·내용</text>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="rgba(61,90,128,0.06)" stroke="#3d5a80" stroke-width="1"/>
+<rect x="28" y="364" width="24" height="24" rx="4" fill="#3d5a80"/>
+<text x="40" y="376" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="4">4</text>
+<text x="64" y="372" font-size="20" fill="#252824" font-weight="600">회사 계정 로그인</text>
+<text x="64" y="396" font-size="16" fill="#5b6356">문 앞에서 사람 확인</text>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="460" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="472" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="5">5</text>
+<text x="64" y="468" font-size="20" fill="#252824" font-weight="600">볼 수 있는 본부만</text>
+<text x="64" y="492" font-size="16" fill="#5b6356">명단으로 서버가 판정</text>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="556" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="568" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="6">6</text>
+<text x="64" y="564" font-size="20" fill="#252824" font-weight="600">처리 상태를 적는다</text>
+<text x="64" y="588" font-size="16" fill="#5b6356">담당자는 자기 본부만</text>
+<rect x="16" y="632" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="632" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="652" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="664" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="7">7</text>
+<text x="64" y="660" font-size="20" fill="#252824" font-weight="600">관리자가 마무리</text>
+<text x="64" y="684" font-size="16" fill="#5b6356">이슈 유형·삭제는 관리자</text>
+<rect x="324" y="56" width="144" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="56" width="144" height="64" rx="6" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="396" y="84" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">점검 시트</text>
+<text x="396" y="104" font-size="16" fill="#5b6356" text-anchor="middle">회차별 탭</text>
+<rect x="324" y="536" width="144" height="160" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="536" width="144" height="160" rx="6" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="396" y="604" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">처리 기록</text>
+<text x="396" y="624" font-size="16" fill="#5b6356" text-anchor="middle">상태·결과</text>
+<text x="396" y="644" font-size="16" fill="#5b6356" text-anchor="middle">저장소</text>
+<line x1="16" y1="716" x2="464" y2="716" stroke="#d6d8ce" stroke-width="0.8"/>
+<rect x="16" y="732" width="16" height="16" rx="4" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1"/>
+<text x="40" y="744" font-size="16" fill="#252824" data-legend="human">사람</text>
+<rect x="92" y="732" width="16" height="16" rx="4" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<text x="116" y="744" font-size="16" fill="#252824" data-legend="code">프로그램</text>
+<rect x="200" y="732" width="16" height="16" rx="4" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="224" y="744" font-size="16" fill="#252824" data-legend="data">자료</text>
+<rect x="276" y="732" width="16" height="16" rx="4" fill="rgba(61,90,128,0.06)" stroke="#3d5a80" stroke-width="1"/>
+<text x="300" y="744" font-size="16" fill="#252824" data-legend="external">바깥 서비스</text>
+</svg>
+<figcaption>네모 하나가 한 단계입니다. 번호 순서로 위에서 아래로 흐르고, 오른쪽은 그 단계와 주고받는 AI·자료·바깥 서비스입니다. <a href="../diagrams/qa-brief.html">구조도만 크게 보기</a></figcaption>
+</figure>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-steps">
+<h2 id="h-steps">단계별로 보면</h2>
+<ol class="steps"><li class="step"><span class="step-no" aria-hidden="true">1</span><div><p class="step-title"><span class="role role--code">프로그램</span>매일 아침 시트 읽기</p><p>매일 아침 정해진 시각에 점검 시트의 회차별 탭을 읽는다. 머리 칸을 진한 파랑으로 칠한 칸만 가져오고, 점검에서 문제가 나온 고객에게 다시 거는 보완 통화에 필요한 전화번호 칸 하나만 이름으로 지정해 예외로 읽는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">2</span><div><p class="step-title"><span class="role role--code">프로그램</span>칸이 줄면 멈춘다</p><p>어제 읽던 칸이 오늘 사라졌으면 어느 칸인지 기록하고 그 자리에서 멈춘다. 화면 자료를 건드리지 않으므로 지난 화면이 그대로 남는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">3</span><div><p class="step-title"><span class="role role--code">프로그램</span>화면용 자료로 정리</p><p>회차마다 조금씩 다른 칸 이름을 하나로 맞추고, 본부·우선순위·확인 사항 제목과 내용으로 정리한다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">4</span><div><p class="step-title"><span class="role role--external">바깥 서비스</span>회사 계정 로그인</p><p>화면에 들어오기 전에 회사 계정으로 로그인했는지 클라우드 서비스의 문에서 먼저 확인한다. 앱은 이 문이 붙여 주는 서명 토큰만 믿는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">5</span><div><p class="step-title"><span class="role role--code">프로그램</span>볼 수 있는 본부만</p><p>관리자는 전 본부를, 본부 담당자는 명단에 적힌 자기 본부만 본다. 본부마다 전용 주소(링크)가 따로 있는데, 화면이 보낸 본부 이름을 믿지 않고 서버가 그 주소와 담당자 명단으로 다시 확인한다. 명단에 없으면 아무것도 볼 수 없다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">6</span><div><p class="step-title"><span class="role role--human">사람</span>처리 상태를 적는다</p><p>본부 담당자가 확인 필요·확인 중·완료 상태와 확인 결과를 적는다. 상세를 열면 통화 녹음도 들을 수 있는데, 로그인을 확인한 뒤에만 재생된다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">7</span><div><p class="step-title"><span class="role role--human">사람</span>관리자가 마무리</p><p>확인 사항이 어떤 종류의 문제인지 붙이는 분류(이슈 유형)와 확인 결과 삭제는 관리자만 한다. 권한을 두 갈래로 나눠 본부 담당자는 자기 본부 처리만 할 수 있다.</p></div></li></ol>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-words">
+<h2 id="h-words">쉽게 말하면</h2>
+<dl class="gloss"><div><dt>QA</dt><dd>품질 보증(Quality Assurance). 여기서는 상담 통화를 듣고 상담 품질을 점검하는 일을 말한다.</dd></div><div><dt>회차 탭</dt><dd>점검을 한 차례 할 때마다 시트에 새로 만드는 탭. 회차마다 칸 이름이 조금씩 달라 프로그램이 맞춰 읽는다.</dd></div><div><dt>본부</dt><dd>지역별로 나뉜 운영 조직. 담당자는 자기 본부 상담만 본다.</dd></div><div><dt>앞단 인증</dt><dd>사이트에 들어오기 전에 회사 계정으로 로그인했는지 먼저 확인하는 문. 이 문을 통과한 요청만 앱에 닿는다.</dd></div><div><dt>서명 토큰</dt><dd>로그인 문이 붙여 주는 위조할 수 없는 확인증. 앱은 이것만 믿고, 누구나 꾸밀 수 있는 이메일 표시는 믿지 않는다.</dd></div></dl>
+</section>
+<section class="d-sec d-split reveal" aria-label="역할">
+<div><h2>사람이 하는 일</h2><ul><li>본부 담당자가 처리 상태와 확인 결과를 적는다</li><li>관리자가 이슈 유형을 정하고 정리한다</li><li>점검 담당자가 시트에 확인 사항을 쓴다</li></ul></div>
+<div><h2>프로그램·AI가 하는 일</h2><ul><li>매일 아침 시트에서 정해진 칸만 읽는다</li><li>칸이 사라지면 멈추고 지난 화면을 둔다</li><li>로그인과 본부 명단으로 볼 범위를 정한다</li><li>처리 기록을 저장한다</li></ul></div>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-rules">
+<h2 id="h-rules">지키는 선</h2>
+<p class="d-note">이 도구가 일부러 하지 않는 것들입니다.</p>
+<ul class="rules"><li>상담 원문 칸은 읽지 않는다. 색을 잘못 칠해도 이름으로 막는다. 한 번 흘러나오면 되돌릴 수 없다.</li><li>칸이 사라지면 화면을 갱신하지 않고 멈춘다. 반쯤 빈 화면이 조용히 나가는 것보다 낫다.</li><li>화면이 보낸 본부 이름을 믿지 않는다. 서버가 본부 전용 주소와 담당자 명단으로 다시 확인한다.</li><li>로그인 문을 건너뛰는 요청은 서명 토큰 검사로 막는다.</li></ul>
+</section>
+</article>
+<nav class="pager" aria-label="다른 구조도">
+<a href="satisfaction.html" rel="prev">← 만족도 조사 발송 자동화</a>
+<a href="../work.html">Work 목록으로</a>
+<a href="thanks-sms.html" rel="next">주간보호 감사 문자 →</a>
+</nav>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

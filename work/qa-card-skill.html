@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>상담 품질 카드 스킬 구조 · Twosky Work</title>
+<meta name="description" content="상담 통화를 글로 옮긴 기록을 붙여 넣으면 공식 평가 기준에 맞춘 코칭 카드 1건을 쓴다. 판단 기준은 AI가 만들지 않고, 사람이 쓴 문서를 매번 펴서 본다.">
+<meta name="color-scheme" content="dark light">
+<script src="../theme.js"></script>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script src="../data.js" defer></script>
+<script src="../sky.js" defer></script>
+<script src="../app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="../work.html" aria-current="true">Work</a><a href="../game.html">Game</a><a href="../toy.html">Toy</a><a href="../3d.html">3D</a><a href="../all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<nav class="crumb" aria-label="위치"><a href="../work.html">Twosky Work</a><span aria-hidden="true"> / </span>구조도</nav>
+<article class="detail">
+<header class="d-head">
+<h1>상담 품질 카드 스킬</h1>
+<p class="d-sum">상담 통화를 글로 옮긴 기록을 붙여 넣으면 공식 평가 기준에 맞춘 코칭 카드 1건을 쓴다. 판단 기준은 AI가 만들지 않고, 사람이 쓴 문서를 매번 펴서 본다.</p>
+<dl class="d-meta"><div><dt>만든 때</dt><dd>2026년 7월</dd></div><div><dt>지금</dt><dd>상담 품질 점검에 사용 중</dd></div><div><dt>쓰는 사람</dt><dd>상담 품질 점검 담당자</dd></div></dl>
+<ul class="d-stats"><li><b>6</b><span>답지로 쓴 실제 카드</span></li><li><b>17</b><span>자동 채점 항목</span></li><li><b>750~2,500</b><span>카드 본문 글자 수</span></li></ul>
+</header>
+<section class="d-sec reveal" aria-labelledby="h-why">
+<h2 id="h-why">왜 필요했나</h2>
+<p>상담 품질을 보는 팀은 통화를 듣고, 보완할 점이 있던 상담을 카드로 남긴다. 어떤 기준을 어겼고 어떻게 했어야 했는지를 적는 일이다.</p><p>판단 기준은 이미 상담 매뉴얼과 평가 기준표로 있었다. 그런데 매번 다시 읽고 적용해 한 건씩 쓰는 데 오래 걸렸고, 건수는 쌓였다.</p>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-map">
+<h2 id="h-map">구조 한눈에</h2>
+<figure class="d-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 668" role="img" aria-labelledby="qa-card-skill-title qa-card-skill-desc" font-family="&#39;Malgun Gothic&#39;,&#39;Apple SD Gothic Neo&#39;,sans-serif">
+<title id="qa-card-skill-title">상담 품질 카드 스킬의 구조</title>
+<desc id="qa-card-skill-desc">프로그램이 숫자 개인정보를 먼저 가리고, AI는 사람이 쓴 기준 문서를 펴서 판단·분류·작성하며, 최종 판정과 게시는 사람이 한다.</desc>
+<defs><marker id="qa-card-skill-arrow-code" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker><marker id="qa-card-skill-arrow-data" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker></defs>
+<rect width="480" height="668" fill="#f3f2ed"/>
+<line x1="156" y1="120" x2="156" y2="148" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-code)"/>
+<line x1="156" y1="216" x2="156" y2="244" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-code)"/>
+<line x1="156" y1="312" x2="156" y2="340" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-code)"/>
+<line x1="156" y1="408" x2="156" y2="436" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-code)"/>
+<line x1="156" y1="504" x2="156" y2="532" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-code)"/>
+<line x1="324" y1="292" x2="300" y2="292" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-data)"/>
+<line x1="324" y1="388" x2="300" y2="388" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-data)"/>
+<line x1="324" y1="484" x2="300" y2="484" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-card-skill-arrow-data)"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="76" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="88" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="1">1</text>
+<text x="64" y="84" font-size="20" fill="#252824" font-weight="600">기록을 붙여 넣는다</text>
+<text x="64" y="108" font-size="16" fill="#5b6356">통화 전사문 + 고유번호</text>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="172" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="184" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="2">2</text>
+<text x="64" y="180" font-size="20" fill="#252824" font-weight="600">번호·메일 가림</text>
+<text x="64" y="204" font-size="16" fill="#5b6356">전화·주민·카드·메일</text>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<rect x="28" y="268" width="24" height="24" rx="4" fill="#367662"/>
+<text x="40" y="280" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="3">3</text>
+<text x="64" y="276" font-size="20" fill="#252824" font-weight="600">어긋난 곳을 찾는다</text>
+<text x="64" y="300" font-size="16" fill="#5b6356">상담 매뉴얼과 대조</text>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<rect x="28" y="364" width="24" height="24" rx="4" fill="#367662"/>
+<text x="40" y="376" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="4">4</text>
+<text x="64" y="372" font-size="20" fill="#252824" font-weight="600">평가 항목으로 분류</text>
+<text x="64" y="396" font-size="16" fill="#5b6356">공식 항목 이름으로만</text>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<rect x="28" y="460" width="24" height="24" rx="4" fill="#367662"/>
+<text x="40" y="472" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="5">5</text>
+<text x="64" y="468" font-size="20" fill="#252824" font-weight="600">카드 1건 작성</text>
+<text x="64" y="492" font-size="16" fill="#5b6356">고객 이름은 성+○○</text>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="556" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="568" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="6">6</text>
+<text x="64" y="564" font-size="20" fill="#252824" font-weight="600">읽고 판정해 올린다</text>
+<text x="64" y="588" font-size="16" fill="#5b6356">팀 문서에는 사람이 직접</text>
+<rect x="324" y="248" width="144" height="160" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="248" width="144" height="160" rx="6" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="396" y="316" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">기준 문서</text>
+<text x="396" y="336" font-size="16" fill="#5b6356" text-anchor="middle">상담 매뉴얼</text>
+<text x="396" y="356" font-size="16" fill="#5b6356" text-anchor="middle">평가 기준표</text>
+<rect x="324" y="440" width="144" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="440" width="144" height="64" rx="6" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="396" y="468" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">실제 카드</text>
+<text x="396" y="488" font-size="16" fill="#5b6356" text-anchor="middle">분량 기준</text>
+<line x1="16" y1="620" x2="464" y2="620" stroke="#d6d8ce" stroke-width="0.8"/>
+<rect x="16" y="636" width="16" height="16" rx="4" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1"/>
+<text x="40" y="648" font-size="16" fill="#252824" data-legend="human">사람</text>
+<rect x="92" y="636" width="16" height="16" rx="4" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<text x="116" y="648" font-size="16" fill="#252824" data-legend="ai">AI</text>
+<rect x="164" y="636" width="16" height="16" rx="4" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<text x="188" y="648" font-size="16" fill="#252824" data-legend="code">프로그램</text>
+<rect x="272" y="636" width="16" height="16" rx="4" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="296" y="648" font-size="16" fill="#252824" data-legend="data">자료</text>
+</svg>
+<figcaption>네모 하나가 한 단계입니다. 번호 순서로 위에서 아래로 흐르고, 오른쪽은 그 단계와 주고받는 AI·자료·바깥 서비스입니다. <a href="../diagrams/qa-card-skill.html">구조도만 크게 보기</a></figcaption>
+</figure>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-steps">
+<h2 id="h-steps">단계별로 보면</h2>
+<ol class="steps"><li class="step"><span class="step-no" aria-hidden="true">1</span><div><p class="step-title"><span class="role role--human">사람</span>기록을 붙여 넣는다</p><p>점검 담당자가 통화를 글로 옮긴 전사문과 그 통화의 고유번호를 붙여 넣는다. 고유번호가 없으면 시작하지 않고 먼저 묻는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">2</span><div><p class="step-title"><span class="role role--code">프로그램</span>번호·메일 가림</p><p>프로그램이 전화번호·주민번호·카드번호·이메일을 먼저 가린다. AI의 성실함에 맡기지 않고 코드가 한다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">3</span><div><p class="step-title"><span class="role role--ai">AI</span>어긋난 곳을 찾는다</p><p>AI가 상담 매뉴얼을 펴서 통화에서 기준과 어긋난 지점을 찾고, 처음 문의한 신규 고객, 이미 이용 중인 기존 고객, 그만두려는 이탈 고객 중 어떤 통화인지 가른다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">4</span><div><p class="step-title"><span class="role role--ai">AI</span>평가 항목으로 분류</p><p>찾은 문제를 평가 기준표의 공식 항목 이름으로 바꾸고, 같은 문제는 하나로 합친다. 새 기준을 만들지 않는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">5</span><div><p class="step-title"><span class="role role--ai">AI</span>카드 1건 작성</p><p>통화 정보, 요약, 평가 항목, 상세 피드백, 개선 제안, 종합 의견 순서로 된 양식에 맞춰 카드를 쓴다. 본문은 750~2,500자이고, 고객 이름은 성만 남기고 가린다(김○○). 팀원이 실제로 쓴 카드가 분량의 위·아래 기준이다. 결과는 내 컴퓨터 폴더에만 저장한다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">6</span><div><p class="step-title"><span class="role role--human">사람</span>읽고 판정해 올린다</p><p>사람이 읽고 맞는지 판정한 뒤 직접 팀 문서에 붙인다. 목소리로만 알 수 있는 것은 &quot;음성 확인 필요&quot;로 따로 빼 두므로 사람이 듣고 정한다.</p></div></li></ol>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-words">
+<h2 id="h-words">쉽게 말하면</h2>
+<dl class="gloss"><div><dt>스킬</dt><dd>AI에게 미리 써 둔 업무 매뉴얼. &quot;이런 요청이 오면 이 문서를 이 순서로 펴서 해&quot;를 파일로 적어 둔 것.</dd></div><div><dt>전사문</dt><dd>통화 녹음을 글로 옮긴 것.</dd></div><div><dt>마스킹</dt><dd>전화번호·이름 같은 개인정보를 ○○처럼 가리는 것.</dd></div><div><dt>답지(골든 세트)</dt><dd>팀원이 실제로 쓴 카드 6건. AI가 쓴 카드가 이것과 얼마나 다른지 숫자로 잰다. 처음엔 AI 카드가 2~8배 길었다.</dd></div></dl>
+</section>
+<section class="d-sec d-split reveal" aria-label="역할">
+<div><h2>사람이 하는 일</h2><ul><li>전사문과 고유번호를 붙여 넣는다</li><li>카드를 읽고 맞는지 판정한다</li><li>음성 확인이 필요한 부분을 듣는다</li><li>팀 문서에 직접 올린다</li></ul></div>
+<div><h2>프로그램·AI가 하는 일</h2><ul><li>전화·주민·카드 번호와 메일을 가린다 (프로그램)</li><li>매뉴얼·기준표로 판단하고 분류한다 (AI)</li><li>양식대로 카드를 쓴다 (AI)</li><li>스킬을 고칠 때마다 결과 카드를 분량·양식 등 17개 항목으로 자동 검사해, 전보다 나빠진 곳을 찾는다 (프로그램)</li></ul></div>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-rules">
+<h2 id="h-rules">지키는 선</h2>
+<p class="d-note">이 도구가 일부러 하지 않는 것들입니다.</p>
+<ul class="rules"><li>판단 기준을 AI가 새로 만들지 않는다. 매번 사람이 쓴 매뉴얼과 기준표를 펴서 본다.</li><li>카드와 전사문을 공개 게시하지 않는다. 저장은 내 컴퓨터 폴더, 게시는 사람이 팀 문서에만 한다.</li><li>전사문에 없는 날짜·이름은 지어내지 않고 &quot;(추후 입력)&quot;으로 비운다.</li><li>목소리로만 알 수 있는 지적은 본문에 단정해 쓰지 않는다.</li></ul>
+</section>
+</article>
+<nav class="pager" aria-label="다른 구조도">
+<a href="list-extractor.html" rel="prev">← 발송 명단 추출 앱</a>
+<a href="../work.html">Work 목록으로</a>
+<a href="satisfaction.html" rel="next">만족도 조사 발송 자동화 →</a>
+</nav>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

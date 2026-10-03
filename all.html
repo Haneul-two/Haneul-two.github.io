@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>전체 작업물 · Twosky</title>
+<meta name="description" content="네 섹션의 작업물을 한곳에서 찾고 거릅니다.">
+<meta name="color-scheme" content="dark light">
+<script src="theme.js"></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="sky.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="all.html" aria-current="page">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<section class="sec-head sec-head--all">
+<div class="sec-copy">
+<p class="number">38 / 전체</p>
+<h1>전체 작업물</h1>
+<p class="sec-intro">네 섹션의 작업물을 한곳에서 찾고 거릅니다.<span class="js-only"> 검색 단축키로 어느 쪽에서든 찾을 수 있습니다.</span></p>
+</div>
+</section>
+<form class="filters" data-filters hidden role="search" aria-label="작업물 거르기">
+<div class="filter-row" role="group" aria-label="섹션"><button type="button" class="chip" data-s="" aria-pressed="true">전체</button><button type="button" class="chip" data-s="work" aria-pressed="false">Work</button><button type="button" class="chip" data-s="game" aria-pressed="false">Game</button><button type="button" class="chip" data-s="toy" aria-pressed="false">Toy</button><button type="button" class="chip" data-s="3d" aria-pressed="false">3D</button></div>
+<div class="filter-row" role="group" aria-label="상태"><button type="button" class="chip" data-st="" aria-pressed="true">전체</button><button type="button" class="chip" data-st="live" aria-pressed="false">공개</button><button type="button" class="chip" data-st="detail" aria-pressed="false">구조도</button><button type="button" class="chip" data-st="private" aria-pressed="false">비공개</button><button type="button" class="chip" data-st="next" aria-pressed="false">만드는 중</button></div>
+<div class="filter-row filter-row--search">
+<label class="sr" for="filter-q">이름·설명 검색</label>
+<input id="filter-q" class="filter-q" type="search" maxlength="60" placeholder="이름이나 설명으로 찾기" autocomplete="off">
+<label class="sr" for="filter-sort">정렬</label>
+<select id="filter-sort" class="filter-sort"><option value="section">섹션순</option><option value="name">이름순</option></select>
+</div>
+<p class="filter-count" aria-live="polite"><b data-shown>38</b>개 / 전체 38개</p>
+</form>
+<ul class="cards cards--all" data-cards><li class="card card--detail card--work reveal" id="w-list-extractor" data-section="work" data-status="private" data-detail data-name="발송 명단 추출 앱"><a class="card-link" href="work/list-extractor.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 명단 추출 앱</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">발송 명단 추출 앱</span>
+<span class="card-note">조건을 적으면 AI가 조회문을 쓰고, 실행과 발송은 사람이 한다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-card-skill" data-section="work" data-status="private" data-detail data-name="상담 품질 카드 스킬"><a class="card-link" href="work/qa-card-skill.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 품질 카드 스킬</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">상담 품질 카드 스킬</span>
+<span class="card-note">상담 기록을 넣으면 품질 코칭 카드 1건을 쓰는 AI 스킬.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-satisfaction" data-section="work" data-status="private" data-detail data-name="만족도 조사 발송 자동화"><a class="card-link" href="work/satisfaction.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">만족도 조사 발송 자동화</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">만족도 조사 발송 자동화</span>
+<span class="card-note">상담 이력 파일에서 만족도 조사 문자 발송 목록을 만든다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-brief" data-section="work" data-status="private" data-detail data-name="QA 주간 브리핑 대시보드"><a class="card-link" href="work/qa-brief.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">QA 주간 브리핑 대시보드</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">QA 주간 브리핑 대시보드</span>
+<span class="card-note">매일 아침 점검 시트를 읽어 본부별 확인 화면으로 낸다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-thanks-sms" data-section="work" data-status="private" data-detail data-name="주간보호 감사 문자"><a class="card-link" href="work/thanks-sms.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">주간보호 감사 문자</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">주간보호 감사 문자</span>
+<span class="card-note">계약을 마친 보호자에게 다음 날 감사 문자를 사람 승인 후 보낸다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-site" data-section="work" data-status="private" data-detail data-name="상담 Q&amp;A 사이트"><a class="card-link" href="work/qa-site.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 Q&amp;A 사이트</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">상담 Q&amp;A 사이트</span>
+<span class="card-note">노션 Q&amp;A 212건을 검색·수정 이력이 있는 사내 사이트로 옮겼다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--private card--work reveal" id="w-call-player" data-section="work" data-status="private" data-name="상담 녹취 청취 도구"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 녹취 청취 도구</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">상담 녹취 청취 도구</span>
+<span class="card-note">점검 표에서 바로 통화 녹음을 재생한다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-automation-board" data-section="work" data-status="private" data-name="자동화 상태판"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">자동화 상태판</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">자동화 상태판</span>
+<span class="card-note">매일 도는 자동 작업 8개가 실제로 돌았는지 5분마다 확인한다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-sheet-merge" data-section="work" data-status="private" data-name="본부 점검 시트 통합"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">본부 점검 시트 통합</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">본부 점검 시트 통합</span>
+<span class="card-note">본부 3곳의 점검 시트 4탭을 2탭으로 합치며 셀 차이 0으로 옮겼다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-perf-skill" data-section="work" data-status="private" data-name="발송 성과 분석 스킬"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 성과 분석 스킬</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">발송 성과 분석 스킬</span>
+<span class="card-note">발송 성과 시트를 읽어 분석 문서를 써 준다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-report-deck" data-section="work" data-status="private" data-name="보고서 양식 엔진"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">보고서 양식 엔진</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">보고서 양식 엔진</span>
+<span class="card-note">회사 공식 양식대로 보고용 슬라이드를 만든다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-key-points" data-section="work" data-status="private" data-name="확인 사항 작성 스킬"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">확인 사항 작성 스킬</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">확인 사항 작성 스킬</span>
+<span class="card-note">상담 메모를 넣으면 점검 시트 3칸을 기존 작성자 문체로 채운다.</span>
+
+</span></div></li><li class="card card--private card--work reveal" id="w-target-extractor" data-section="work" data-status="private" data-name="발송 대상 추출기"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 대상 추출기</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">발송 대상 추출기</span>
+<span class="card-note">연도별 상담 이력을 한 DB로 모아 기간·유형으로 발송 대상을 뽑는다.</span>
+
+</span></div></li><li class="card card--next card--work reveal" id="w-dashboard-studio" data-section="work" data-status="next" data-name="QA 대시보드 설계 스튜디오"><div class="card-link"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">QA 대시보드 설계 스튜디오</span></span>
+<span class="card-body">
+<span class="badge badge--next">만드는 중</span>
+<span class="card-name">QA 대시보드 설계 스튜디오</span>
+<span class="card-note">대시보드 시안을 그려 보는 도구. 뼈대 완성, 차트 14종 작업 예정.</span>
+
+</span></div></li><li class="card card--game reveal" id="w-honey-catch" data-section="game" data-status="live" data-name="토닥곰 꿀단지 받기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/honey-catch.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/honey-catch.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">토닥곰 꿀단지 받기<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">떨어지는 꿀단지를 곰이 받아 내는 미니게임.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--game reveal" id="w-tamagotchi" data-section="game" data-status="live" data-name="토닥곰 키우기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/tamagotchi.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/tamagotchi.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">토닥곰 키우기<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">아기곰부터 노년곰까지 돌보며 키우는 다마고치.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--game reveal" id="w-honey-throw" data-section="game" data-status="live" data-name="토닥곰 던지기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/honey-throw.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/honey-throw.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">토닥곰 던지기<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">새총처럼 곰을 당겼다 놓아 꿀단지를 항아리에 넣는 물리 퍼즐.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--game reveal" id="w-gumiho-shooter" data-section="game" data-status="live" data-name="구미호 슈팅"><a class="card-link" href="https://haneul-two.github.io/gumiho-shooter/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/gumiho-shooter.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">구미호 슈팅<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">휴대폰 세로 화면 탄막 슈팅. HTML 파일 하나로 돌아간다.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--private card--game reveal" id="w-regex-dungeon" data-section="game" data-status="private" data-name="regex-dungeon"><div class="card-link"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">regex-dungeon</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">regex-dungeon</span>
+<span class="card-note">정규식을 배우는 터미널 로그라이크. npm에 공개돼 npx 한 줄로 바로 시작한다.</span>
+
+</span></div></li><li class="card card--next card--game reveal" id="w-guild-board" data-section="game" data-status="next" data-name="구미호 길드 현황판"><div class="card-link"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">구미호 길드 현황판</span></span>
+<span class="card-body">
+<span class="badge badge--next">만드는 중</span>
+<span class="card-name">구미호 길드 현황판</span>
+<span class="card-note">모바일 게임 동맹 길드원 현황판. 설계 완료, 구현 예정.</span>
+
+</span></div></li><li class="card card--toy reveal" id="w-disease-atlas" data-section="toy" data-status="live" data-name="Disease Atlas"><a class="card-link" href="https://disease-atlas-eta.vercel.app" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/disease-atlas.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">Disease Atlas<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">질병 80개를 인체 부위와 관계선으로 잇는 질병 지도.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--toy reveal" id="w-care-navigator" data-section="toy" data-status="live" data-name="케어 내비게이터"><a class="card-link" href="https://carenavigator.vercel.app" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/care-navigator.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">케어 내비게이터<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">12개 질문으로 예상 장기요양 등급·혜택·본인부담금을 보여 준다.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--toy reveal" id="w-alife-garden" data-section="toy" data-status="live" data-name="인공 생명 정원"><a class="card-link" href="https://haneul-two.github.io/alife-garden/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/alife-garden.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">인공 생명 정원<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">행동 규칙 없이 사냥·무리·종 분화가 생기는 인공 생명 시뮬레이터.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--toy reveal" id="w-todak-universe" data-section="toy" data-status="live" data-name="토닥곰 우주"><a class="card-link" href="https://haneul-two.github.io/todak-bear/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/todak-universe.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">토닥곰 우주<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">곰 캐릭터 하나를 터미널, GitHub 프로필, 데스크톱 펫에 같은 성격으로 옮겼다.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--toy reveal" id="w-ai-storage" data-section="toy" data-status="live" data-name="AI 정보 창고"><a class="card-link" href="https://haneul-two.github.io/ai-data-storage/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/ai-storage.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">AI 정보 창고<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">행사, 뉴스, 논문, 채용 소식을 주 3회 자동으로 모으는 개인 대시보드.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--toy reveal" id="w-zero-onboarding" data-section="toy" data-status="live" data-name="제로 온보딩"><a class="card-link" href="https://haneul-two.github.io/zero-onboarding/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/zero-onboarding.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">제로 온보딩<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">코딩을 모르는 팀원을 위한 AI 코딩 도구 입문 가이드.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--private card--toy reveal" id="w-elder-status" data-section="toy" data-status="private" data-name="대한민국 노인 현황"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">대한민국 노인 현황</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">대한민국 노인 현황</span>
+<span class="card-note">노인 인구·장기요양 통계를 한 화면에 모은 정적 대시보드.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-astra-ops" data-section="toy" data-status="private" data-name="Astra Ops"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">Astra Ops</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">Astra Ops</span>
+<span class="card-note">내 PC의 git 저장소 상태를 한눈에 보는 개발 관제판.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-make-it" data-section="toy" data-status="private" data-name="make-it"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">make-it</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">make-it</span>
+<span class="card-note">짧은 아이디어를 완성품까지 끌고 가는 AI 작업 절차.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-ai-study" data-section="toy" data-status="private" data-name="AI·개발 훈련장"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">AI·개발 훈련장</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">AI·개발 훈련장</span>
+<span class="card-note">비개발자용 AI·개발·파이썬 학습장 28단원.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-session-search" data-section="toy" data-status="private" data-name="세션 기록 검색"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">세션 기록 검색</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">세션 기록 검색</span>
+<span class="card-note">지난 AI 작업 대화를 한국어로 찾는 도구.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-bear-statusline" data-section="toy" data-status="private" data-name="곰 상태 표시줄"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">곰 상태 표시줄</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">곰 상태 표시줄</span>
+<span class="card-note">AI 코딩 도구 아래에 기분이 바뀌는 곰과 사용량을 띄운다.</span>
+
+</span></div></li><li class="card card--private card--toy reveal" id="w-link-infographic" data-section="toy" data-status="private" data-name="링크 인포그래픽 스튜디오"><div class="card-link"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">링크 인포그래픽 스튜디오</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">링크 인포그래픽 스튜디오</span>
+<span class="card-note">공개 링크를 읽어 세로형 인포그래픽으로 정리한다.</span>
+
+</span></div></li><li class="card card--3d reveal" id="w-microbot-morph" data-section="3d" data-status="live" data-name="입자 모핑"><a class="card-link" href="https://haneul-two.github.io/microbot-morph/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/microbot-morph.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">입자 모핑<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">입자 65,536개가 14가지 형상 사이를 날아 다시 맺힌다.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--3d reveal" id="w-portfolio-bear" data-section="3d" data-status="live" data-name="포트폴리오 입자 곰"><a class="card-link" href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/portfolio-bear.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">포트폴리오 입자 곰<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">읽는 구간마다 입자가 곰·별자리·하늘로 모양을 바꾸는 소개 사이트.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li><li class="card card--private card--3d reveal" id="w-midnight-store" data-section="3d" data-status="private" data-name="심야 편의점 03:17"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">심야 편의점 03:17</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">심야 편의점 03:17</span>
+<span class="card-note">비 오는 새벽 편의점에서 물건 여섯 개를 관찰하는 3D 웹 전시.</span>
+
+</span></div></li><li class="card card--private card--3d reveal" id="w-chest-highlight" data-section="3d" data-status="private" data-name="보물상자 하이라이트 연출"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">보물상자 하이라이트 연출</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">보물상자 하이라이트 연출</span>
+<span class="card-note">등급 상승 → 폭발 → 보상 공개까지 이어지는 모바일 게임식 연출.</span>
+
+</span></div></li><li class="card card--private card--3d reveal" id="w-neuti-village" data-section="3d" data-status="private" data-name="느티마을"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">느티마을</span></span>
+<span class="card-body">
+<span class="badge badge--private">비공개</span>
+<span class="card-name">느티마을</span>
+<span class="card-note">건설·주민 이동·재정 정산이 돌아가는 3D 도시 시뮬레이터.</span>
+
+</span></div></li></ul>
+<div class="empty empty--filter" data-empty hidden>
+<p>조건에 맞는 작업이 없습니다.</p>
+<button type="button" class="btn" data-reset>필터 초기화</button>
+</div>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

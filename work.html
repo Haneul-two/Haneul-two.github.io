@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Twosky Work · Twosky</title>
+<meta name="description" content="상담 기록, 발송 명단, 품질 점검. 매주 반복되던 일을 AI와 함께 도구로 바꿨습니다. 구조도로 어떻게 돌아가는지 보여 드립니다.">
+<meta name="color-scheme" content="dark light">
+<script src="theme.js"></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="sky.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html" aria-current="page">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<section class="sec-head sec-head--work">
+<div class="sec-copy">
+<p class="number">01 / Work</p>
+<h1>Twosky Work</h1>
+<p class="sec-sub">일하는 도구</p>
+<p class="sec-intro">상담 기록, 발송 명단, 품질 점검. 매주 반복되던 일을 AI와 함께 도구로 바꿨습니다. 구조도로 어떻게 돌아가는지 보여 드립니다.</p>
+</div>
+<div class="art art--work" aria-hidden="true">
+<span class="bp-file">flow.svg</span>
+<span class="bp-node bp-1"><b>1</b>조건을 적는다</span>
+<span class="bp-node bp-2"><b>2</b>프로그램이 검사</span>
+<span class="bp-node bp-3"><b>3</b>사람이 누른다</span>
+<span class="bp-caption">노동은 도구에게, 판단은 사람에게.</span>
+</div>
+</section>
+<section class="group" aria-labelledby="g-detail">
+<h2 id="g-detail">구조도로 보는 업무 도구 <span class="count">6</span></h2>
+<p class="group-note">회사 안에서만 쓰는 도구라 화면 대신 구조를 보여 드립니다. 누가(사람·AI·프로그램) 무엇을 하는지, 데이터가 어디에 머무는지.</p>
+<ul class="cards cards--wide"><li class="card card--detail card--work reveal" id="w-list-extractor" data-section="work" data-status="private" data-detail data-name="발송 명단 추출 앱"><a class="card-link" href="work/list-extractor.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 명단 추출 앱</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">발송 명단 추출 앱</span>
+<span class="card-note">조건을 적으면 AI가 조회문을 쓰고, 실행과 발송은 사람이 한다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-card-skill" data-section="work" data-status="private" data-detail data-name="상담 품질 카드 스킬"><a class="card-link" href="work/qa-card-skill.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 품질 카드 스킬</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">상담 품질 카드 스킬</span>
+<span class="card-note">상담 기록을 넣으면 품질 코칭 카드 1건을 쓰는 AI 스킬.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-satisfaction" data-section="work" data-status="private" data-detail data-name="만족도 조사 발송 자동화"><a class="card-link" href="work/satisfaction.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">만족도 조사 발송 자동화</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">만족도 조사 발송 자동화</span>
+<span class="card-note">상담 이력 파일에서 만족도 조사 문자 발송 목록을 만든다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-brief" data-section="work" data-status="private" data-detail data-name="QA 주간 브리핑 대시보드"><a class="card-link" href="work/qa-brief.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">QA 주간 브리핑 대시보드</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">QA 주간 브리핑 대시보드</span>
+<span class="card-note">매일 아침 점검 시트를 읽어 본부별 확인 화면으로 낸다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-thanks-sms" data-section="work" data-status="private" data-detail data-name="주간보호 감사 문자"><a class="card-link" href="work/thanks-sms.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">주간보호 감사 문자</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">주간보호 감사 문자</span>
+<span class="card-note">계약을 마친 보호자에게 다음 날 감사 문자를 사람 승인 후 보낸다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li><li class="card card--detail card--work reveal" id="w-qa-site" data-section="work" data-status="private" data-detail data-name="상담 Q&amp;A 사이트"><a class="card-link" href="work/qa-site.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 Q&amp;A 사이트</span></span>
+<span class="card-body">
+<span class="badge badge--detail">구조도</span>
+<span class="card-name">상담 Q&amp;A 사이트</span>
+<span class="card-note">노션 Q&amp;A 212건을 검색·수정 이력이 있는 사내 사이트로 옮겼다.</span>
+<span class="card-cta">구조 보기 →</span>
+</span></a></li></ul>
+</section>
+<section class="group" aria-labelledby="g-rest">
+<h2 id="g-rest">그 밖의 업무 도구 <span class="count">8</span></h2>
+<ul class="rows"><li class="row row--private reveal" id="w-call-player"><span class="row-name">상담 녹취 청취 도구</span><span class="row-note">점검 표에서 바로 통화 녹음을 재생한다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-automation-board"><span class="row-name">자동화 상태판</span><span class="row-note">매일 도는 자동 작업 8개가 실제로 돌았는지 5분마다 확인한다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-sheet-merge"><span class="row-name">본부 점검 시트 통합</span><span class="row-note">본부 3곳의 점검 시트 4탭을 2탭으로 합치며 셀 차이 0으로 옮겼다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-perf-skill"><span class="row-name">발송 성과 분석 스킬</span><span class="row-note">발송 성과 시트를 읽어 분석 문서를 써 준다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-report-deck"><span class="row-name">보고서 양식 엔진</span><span class="row-note">회사 공식 양식대로 보고용 슬라이드를 만든다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-key-points"><span class="row-name">확인 사항 작성 스킬</span><span class="row-note">상담 메모를 넣으면 점검 시트 3칸을 기존 작성자 문체로 채운다.</span><span class="badge badge--private">비공개</span></li><li class="row row--private reveal" id="w-target-extractor"><span class="row-name">발송 대상 추출기</span><span class="row-note">연도별 상담 이력을 한 DB로 모아 기간·유형으로 발송 대상을 뽑는다.</span><span class="badge badge--private">비공개</span></li><li class="row row--next reveal" id="w-dashboard-studio"><span class="row-name">QA 대시보드 설계 스튜디오</span><span class="row-note">대시보드 시안을 그려 보는 도구. 뼈대 완성, 차트 14종 작업 예정.</span><span class="badge badge--next">만드는 중</span></li></ul>
+</section>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

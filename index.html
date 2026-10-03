@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Twosky · 하늘이 만든 것들</title>
+<meta name="description" content="Twosky는 하늘이 AI와 함께 만든 것들을 모아 두는 곳입니다. 회사에서 매일 쓰는 도구도, 주말에 만든 게임도 여기서 이어집니다.">
+<meta name="color-scheme" content="dark light">
+<script src="theme.js"></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="sky.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<section class="intro">
+<p class="edition">Twosky · 2026 · 작업물 38개</p>
+<h1 class="hero-title"><span class="hero-line">일하는 도구부터,</span><span class="hero-line">노는 세계까지.</span></h1>
+<p class="lede">Twosky는 하늘이 AI와 함께 만든 것들을 모아 두는 곳입니다.<br>회사에서 매일 쓰는 도구도, 주말에 만든 게임도 여기서 이어집니다.</p>
+<div class="hero-actions">
+<a class="btn btn--primary" href="all.html">전체 작업물 보기 <span aria-hidden="true">→</span></a>
+<button type="button" class="btn" data-pick hidden aria-haspopup="dialog"><span aria-hidden="true">✦</span> 아무거나 하나 뽑기</button>
+</div>
+<ul class="stats" aria-label="작업물 수"><li class="stat stat--all"><b data-count="38">38</b><span>전체</span></li><li class="stat stat--live"><b data-count="12">12</b><span>공개</span></li><li class="stat stat--detail"><b data-count="6">6</b><span>구조도</span></li><li class="stat stat--next"><b data-count="2">2</b><span>만드는 중</span></li></ul>
+</section>
+<section class="projects" aria-label="섹션">
+<a class="project project--work reveal" href="work.html" data-tilt>
+<div class="art art--work" aria-hidden="true">
+<span class="bp-file">flow.svg</span>
+<span class="bp-node bp-1"><b>1</b>조건을 적는다</span>
+<span class="bp-node bp-2"><b>2</b>프로그램이 검사</span>
+<span class="bp-node bp-3"><b>3</b>사람이 누른다</span>
+<span class="bp-caption">노동은 도구에게, 판단은 사람에게.</span>
+</div>
+<div class="project-copy">
+<span class="number">01 / Work</span>
+<h2>Twosky Work</h2>
+<p><strong>일하는 도구.</strong> 상담 기록, 발송 명단, 품질 점검. 매주 반복되던 일을 AI와 함께 도구로 바꿨습니다. 구조도로 어떻게 돌아가는지 보여 드립니다.</p>
+<span class="enter">작업 13 · 만드는 중 1 <b aria-hidden="true">→</b></span>
+</div>
+</a><a class="project project--game reveal" href="game.html" data-tilt>
+<div class="art art--game" aria-hidden="true">
+<span class="hud"><span>HI 650000</span><span>1P</span></span>
+<span class="pixel-bear" style="box-shadow:10px 0px 0 #c99a4b,20px 0px 0 #c99a4b,70px 0px 0 #c99a4b,80px 0px 0 #c99a4b,0px 10px 0 #c99a4b,10px 10px 0 #c99a4b,20px 10px 0 #c99a4b,30px 10px 0 #c99a4b,40px 10px 0 #c99a4b,50px 10px 0 #c99a4b,60px 10px 0 #c99a4b,70px 10px 0 #c99a4b,80px 10px 0 #c99a4b,90px 10px 0 #c99a4b,10px 20px 0 #c99a4b,20px 20px 0 #c99a4b,30px 20px 0 #c99a4b,40px 20px 0 #c99a4b,50px 20px 0 #c99a4b,60px 20px 0 #c99a4b,70px 20px 0 #c99a4b,80px 20px 0 #c99a4b,10px 30px 0 #c99a4b,20px 30px 0 #2a1d12,30px 30px 0 #c99a4b,40px 30px 0 #c99a4b,50px 30px 0 #c99a4b,60px 30px 0 #c99a4b,70px 30px 0 #2a1d12,80px 30px 0 #c99a4b,10px 40px 0 #c99a4b,20px 40px 0 #c99a4b,30px 40px 0 #c99a4b,40px 40px 0 #ecd3a0,50px 40px 0 #ecd3a0,60px 40px 0 #c99a4b,70px 40px 0 #c99a4b,80px 40px 0 #c99a4b,10px 50px 0 #c99a4b,20px 50px 0 #c99a4b,30px 50px 0 #ecd3a0,40px 50px 0 #2a1d12,50px 50px 0 #2a1d12,60px 50px 0 #ecd3a0,70px 50px 0 #c99a4b,80px 50px 0 #c99a4b,20px 60px 0 #c99a4b,30px 60px 0 #c99a4b,40px 60px 0 #ecd3a0,50px 60px 0 #ecd3a0,60px 60px 0 #c99a4b,70px 60px 0 #c99a4b,30px 70px 0 #c99a4b,40px 70px 0 #c99a4b,50px 70px 0 #c99a4b,60px 70px 0 #c99a4b"></span>
+<span class="press">PRESS START</span>
+</div>
+<div class="project-copy">
+<span class="number">02 / Game</span>
+<h2>Twosky Game</h2>
+<p><strong>노는 세계.</strong> 곰이 꿀단지를 받고 구미호가 탄막을 피합니다. 휴대폰에서 바로 열리는 작은 게임들.</p>
+<span class="enter">작업 5 · 만드는 중 1 <b aria-hidden="true">→</b></span>
+</div>
+</a><a class="project project--toy reveal" href="toy.html" data-tilt>
+<div class="art art--toy" aria-hidden="true">
+<span class="block block-t">T</span><span class="block block-o">O</span><span class="block block-y">Y</span>
+<span class="toy-caption">눌러 보고, 돌려 보고, 쌓아 본다.</span>
+</div>
+<div class="project-copy">
+<span class="number">03 / Toy</span>
+<h2>Twosky Toy</h2>
+<p><strong>만지는 장난감.</strong> 질병 지도, 인공 생명 정원, 돌봄 계산기. 궁금한 것을 만져 볼 수 있게 만든 것들.</p>
+<span class="enter">작업 13 <b aria-hidden="true">→</b></span>
+</div>
+</a><a class="project project--3d reveal" href="3d.html" data-tilt>
+<div class="art art--3d" aria-hidden="true">
+<span class="scene"><span class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+<span class="axis">x · y · z</span>
+</div>
+<div class="project-copy">
+<span class="number">04 / 3D</span>
+<h2>Twosky 3D</h2>
+<p><strong>입체 실험.</strong> 입자 6만 5천 개, 터지는 보물상자, 작은 도시. 화면 속 공간을 다루는 실험.</p>
+<span class="enter">작업 5 <b aria-hidden="true">→</b></span>
+</div>
+</a>
+</section>
+<dialog class="pick" id="pick" aria-labelledby="pick-title">
+<div class="pick-box">
+<p class="pick-eyebrow" id="pick-title">오늘 열어 볼 작업물</p>
+<div class="pick-card" data-pick-card></div>
+<div class="pick-actions">
+<a class="btn btn--primary" data-pick-open href="#" target="_blank" rel="noopener">열기 ↗<span class="sr"> (새 탭)</span></a>
+<button type="button" class="btn" data-pick-again>다시 뽑기</button>
+<button type="button" class="btn btn--ghost" data-pick-close>닫기</button>
+</div>
+</div>
+</dialog>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

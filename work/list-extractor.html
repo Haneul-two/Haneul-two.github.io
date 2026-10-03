@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>발송 명단 추출 앱 구조 · Twosky Work</title>
+<meta name="description" content="보낼 대상을 문장으로 적으면 AI가 조회문을 써 준다. 실행 버튼과 발송은 사람이 누르고, 고객 명단은 AI에게 가지 않는다.">
+<meta name="color-scheme" content="dark light">
+<script src="../theme.js"></script>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<script src="../data.js" defer></script>
+<script src="../sky.js" defer></script>
+<script src="../app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="../work.html" aria-current="true">Work</a><a href="../game.html">Game</a><a href="../toy.html">Toy</a><a href="../3d.html">3D</a><a href="../all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<nav class="crumb" aria-label="위치"><a href="../work.html">Twosky Work</a><span aria-hidden="true"> / </span>구조도</nav>
+<article class="detail">
+<header class="d-head">
+<h1>발송 명단 추출 앱</h1>
+<p class="d-sum">보낼 대상을 문장으로 적으면 AI가 조회문을 써 준다. 실행 버튼과 발송은 사람이 누르고, 고객 명단은 AI에게 가지 않는다.</p>
+<dl class="d-meta"><div><dt>만든 때</dt><dd>2026년 6월</dd></div><div><dt>지금</dt><dd>업무에서 사용 중</dd></div><div><dt>쓰는 사람</dt><dd>안내 문자를 보내는 담당자</dd></div></dl>
+<ul class="d-stats"><li><b>0</b><span>AI에게 보내는 고객 명단</span></li><li><b>16</b><span>고를 수 있는 데이터 표</span></li><li><b>195</b><span>자동 테스트</span></li></ul>
+</header>
+<section class="d-sec reveal" aria-labelledby="h-why">
+<h2 id="h-why">왜 필요했나</h2>
+<p>고객에게 안내 문자를 한 번 보내려면 대상자 명단이 필요하다. 조건에 맞는 사람을 뽑고, 이미 받았거나 받지 않겠다고 한 사람을 빼고, 번호를 정리한다.</p><p>보낼 때마다 같은 일을 하는데 조건만 매번 달랐다. 그리고 조건을 데이터베이스 조회문으로 옮기는 일은 그 문법을 아는 사람만 할 수 있었다.</p>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-map">
+<h2 id="h-map">구조 한눈에</h2>
+<figure class="d-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 776" role="img" aria-labelledby="list-extractor-title list-extractor-desc" font-family="&#39;Malgun Gothic&#39;,&#39;Apple SD Gothic Neo&#39;,sans-serif">
+<title id="list-extractor-title">발송 명단 추출 앱의 구조</title>
+<desc id="list-extractor-desc">사람이 적은 문장과 조건만 AI에게 가고, 조회 실행과 발송은 사람이 하며, 조회 결과와 명단은 내 컴퓨터 안에서만 오간다.</desc>
+<defs><marker id="list-extractor-arrow-ai" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#367662"/></marker><marker id="list-extractor-arrow-code" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker><marker id="list-extractor-arrow-data" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker></defs>
+<rect width="480" height="776" fill="#f3f2ed"/>
+<rect x="8" y="28" width="296" height="680" rx="8" fill="rgba(37,40,36,0.025)" stroke="#5b6356" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="16" y="48" font-size="16" fill="#5b6356">내 컴퓨터 안 (명단은 여기에만)</text>
+<line x1="156" y1="120" x2="156" y2="148" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="156" y1="216" x2="156" y2="244" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="156" y1="312" x2="156" y2="340" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="156" y1="408" x2="156" y2="436" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="156" y1="504" x2="156" y2="532" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="156" y1="600" x2="156" y2="628" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-code)"/>
+<line x1="296" y1="172" x2="320" y2="172" stroke="#367662" stroke-width="1.2" marker-end="url(#list-extractor-arrow-ai)"/>
+<line x1="324" y1="196" x2="300" y2="196" stroke="#367662" stroke-width="1.2" marker-end="url(#list-extractor-arrow-ai)"/>
+<line x1="296" y1="364" x2="320" y2="364" stroke="#367662" stroke-width="1.2" marker-end="url(#list-extractor-arrow-ai)"/>
+<line x1="324" y1="388" x2="300" y2="388" stroke="#367662" stroke-width="1.2" marker-end="url(#list-extractor-arrow-ai)"/>
+<line x1="296" y1="460" x2="320" y2="460" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-data)"/>
+<line x1="324" y1="484" x2="300" y2="484" stroke="#5b6356" stroke-width="1.2" marker-end="url(#list-extractor-arrow-data)"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="76" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="88" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="1">1</text>
+<text x="64" y="84" font-size="20" fill="#252824" font-weight="600">요청을 문장으로</text>
+<text x="64" y="108" font-size="16" fill="#5b6356">누구에게, 무슨 조건으로</text>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="172" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="184" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="2">2</text>
+<text x="64" y="180" font-size="20" fill="#252824" font-weight="600">조건 칸으로 나눈다</text>
+<text x="64" y="204" font-size="16" fill="#5b6356">문장만 AI에게 보낸다</text>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="268" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="280" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="3">3</text>
+<text x="64" y="276" font-size="20" fill="#252824" font-weight="600">조건을 확인·고친다</text>
+<text x="64" y="300" font-size="16" fill="#5b6356">대상 표·기간·제외 대상</text>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="364" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="376" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="4">4</text>
+<text x="64" y="372" font-size="20" fill="#252824" font-weight="600">조회문을 받아 검사</text>
+<text x="64" y="396" font-size="16" fill="#5b6356">읽기만 하는 문장인지</text>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="460" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="472" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="5">5</text>
+<text x="64" y="468" font-size="20" fill="#252824" font-weight="600">실행 버튼을 누른다</text>
+<text x="64" y="492" font-size="16" fill="#5b6356">직전에 한 번 더 검사</text>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="556" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="568" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="6">6</text>
+<text x="64" y="564" font-size="20" fill="#252824" font-weight="600">제외·중복 빼고 엑셀로</text>
+<text x="64" y="588" font-size="16" fill="#5b6356">명단을 못 읽으면 멈춤</text>
+<rect x="16" y="632" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="632" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="652" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="664" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="7">7</text>
+<text x="64" y="660" font-size="20" fill="#252824" font-weight="600">발송은 사람이 직접</text>
+<text x="64" y="684" font-size="16" fill="#5b6356">앱은 명단까지만</text>
+<rect x="324" y="152" width="144" height="256" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="152" width="144" height="256" rx="6" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<text x="396" y="268" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">AI 모델</text>
+<text x="396" y="288" font-size="16" fill="#5b6356" text-anchor="middle">문장 → 조건</text>
+<text x="396" y="308" font-size="16" fill="#5b6356" text-anchor="middle">조건 → 조회문</text>
+<rect x="324" y="440" width="144" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="440" width="144" height="64" rx="6" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="396" y="460" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">사내 데이터</text>
+<text x="396" y="480" font-size="16" fill="#5b6356" text-anchor="middle">조회 도구로</text>
+<text x="396" y="500" font-size="16" fill="#5b6356" text-anchor="middle">읽기만</text>
+<line x1="16" y1="728" x2="464" y2="728" stroke="#d6d8ce" stroke-width="0.8"/>
+<rect x="16" y="744" width="16" height="16" rx="4" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1"/>
+<text x="40" y="756" font-size="16" fill="#252824" data-legend="human">사람</text>
+<rect x="92" y="744" width="16" height="16" rx="4" fill="rgba(54,118,98,0.10)" stroke="#367662" stroke-width="1"/>
+<text x="116" y="756" font-size="16" fill="#252824" data-legend="ai">AI</text>
+<rect x="164" y="744" width="16" height="16" rx="4" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<text x="188" y="756" font-size="16" fill="#252824" data-legend="code">프로그램</text>
+<rect x="272" y="744" width="16" height="16" rx="4" fill="rgba(37,40,36,0.05)" stroke="#5b6356" stroke-width="1"/>
+<text x="296" y="756" font-size="16" fill="#252824" data-legend="data">자료</text>
+</svg>
+<figcaption>네모 하나가 한 단계입니다. 번호 순서로 위에서 아래로 흐르고, 오른쪽은 그 단계와 주고받는 AI·자료·바깥 서비스입니다. 점선 안은 데이터가 머무는 범위입니다. <a href="../diagrams/list-extractor.html">구조도만 크게 보기</a></figcaption>
+</figure>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-steps">
+<h2 id="h-steps">단계별로 보면</h2>
+<ol class="steps"><li class="step"><span class="step-no" aria-hidden="true">1</span><div><p class="step-title"><span class="role role--human">사람</span>요청을 문장으로</p><p>보낼 대상을 평소 말하듯 적는다. 예를 들면 &quot;지난달 상담한 보호자 중 아직 이용하지 않은 분&quot;. 문장 없이 칸을 직접 채워도 된다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">2</span><div><p class="step-title"><span class="role role--code">프로그램</span>조건 칸으로 나눈다</p><p>앱이 이 문장만 AI 모델에게 보내 대상 표(상담 기록·이용자 정보처럼 주제별로 나뉜 데이터 묶음 16개 중 하나)·기간·조건·제외 대상 칸으로 나눠 받는다. 모르는 표나 잘못된 날짜는 버리고 그 이유를 화면에 적는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">3</span><div><p class="step-title"><span class="role role--human">사람</span>조건을 확인·고친다</p><p>AI가 조건을 다르게 알아들어도 명단은 그럴듯하게 나온다. 그래서 사람이 나뉜 칸을 보고 고치는 것이 첫 번째 확인 지점이다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">4</span><div><p class="step-title"><span class="role role--code">프로그램</span>조회문을 받아 검사</p><p>확인한 조건과 표 정보만 AI에게 보내 조회문을 받는다. 앱은 그 문장이 데이터를 읽기만 하는지 코드로 검사하고, 고치거나 지우는 문장이면 막는다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">5</span><div><p class="step-title"><span class="role role--human">사람</span>실행 버튼을 누른다</p><p>사람이 실행을 누르면 앱이 사내 데이터 조회 도구로 조회한다. 보내기 직전에 한 번 더 검사하고, 결과는 앱이 켜져 있는 동안 화면에만 띄우고 파일로 저장하지 않는다(앱을 끄면 사라진다). 조회 도구가 한 번에 돌려주는 줄 수에는 한도가 있어서, 결과가 다 오지 않았으면 빨간 경고를 띄운다(모르고 보내면 대상이 빠진다).</p></div></li><li class="step"><span class="step-no" aria-hidden="true">6</span><div><p class="step-title"><span class="role role--code">프로그램</span>제외·중복 빼고 엑셀로</p><p>팀 공용 시트의 발송 제외 명단을 빼고, 같은 번호를 하나로 줄여 엑셀로 만든다. 누가 왜 빠졌는지도 따로 적는다. 제외 명단을 못 읽으면 아무것도 만들지 않고 멈춘다.</p></div></li><li class="step"><span class="step-no" aria-hidden="true">7</span><div><p class="step-title"><span class="role role--human">사람</span>발송은 사람이 직접</p><p>엑셀을 문자 발송 서비스에 올리고 보내는 것은 사람이 한다. 앱에는 발송 기능이 없다.</p></div></li></ol>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-words">
+<h2 id="h-words">쉽게 말하면</h2>
+<dl class="gloss"><div><dt>조회문(SQL)</dt><dd>데이터베이스에 &quot;이런 조건의 사람을 찾아 줘&quot;라고 보내는 문장. 정해진 문법이 있어 배운 사람만 쓸 수 있었다.</dd></div><div><dt>읽기 전용 검사</dt><dd>AI가 쓴 조회문이 데이터를 보기만 하는지 앱이 먼저 확인하는 것. 고치거나 지우는 문장이면 실행 자체를 막는다.</dd></div><div><dt>사내 데이터 조회 도구</dt><dd>회사 데이터베이스를 조회하는 사내 웹 도구. 앱은 이 도구를 거쳐서만 데이터를 읽는다.</dd></div><div><dt>제외 명단</dt><dd>다시 연락하면 안 되는 사람들의 번호 목록(수신 거부 등). 팀이 공용 시트로 관리한다.</dd></div></dl>
+</section>
+<section class="d-sec d-split reveal" aria-label="역할">
+<div><h2>사람이 하는 일</h2><ul><li>보낼 대상을 문장으로 적는다</li><li>AI가 나눈 조건을 확인하고 고친다</li><li>실행 버튼을 누른다</li><li>엑셀을 문자 서비스에 올려 보낸다</li></ul></div>
+<div><h2>프로그램·AI가 하는 일</h2><ul><li>문장을 조건 칸으로 나눈다 (AI)</li><li>조건으로 조회문을 쓴다 (AI)</li><li>조회문이 읽기만 하는지 검사한다 (프로그램)</li><li>제외 명단·중복을 빼고 엑셀을 만든다 (프로그램)</li></ul></div>
+</section>
+<section class="d-sec reveal" aria-labelledby="h-rules">
+<h2 id="h-rules">지키는 선</h2>
+<p class="d-note">이 도구가 일부러 하지 않는 것들입니다.</p>
+<ul class="rules"><li>고객 명단은 AI에게 보내지 않는다. AI가 받는 것은 사람이 쓴 문장과 조건, 표의 구조뿐이다.</li><li>조회 결과는 화면에만 띄우고 파일로 저장하지 않는다.</li><li>제외 명단을 못 읽으면 멈춘다. 조용히 넘어가면 받으면 안 되는 사람이 받는다.</li><li>발송 기능은 넣지 않았다. 잘못 뽑힌 명단이 그대로 발송으로 이어지면 되돌릴 수 없다.</li></ul>
+</section>
+</article>
+<nav class="pager" aria-label="다른 구조도">
+<a href="qa-site.html" rel="prev">← 상담 Q&amp;A 사이트</a>
+<a href="../work.html">Work 목록으로</a>
+<a href="qa-card-skill.html" rel="next">상담 품질 카드 스킬 →</a>
+</nav>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>

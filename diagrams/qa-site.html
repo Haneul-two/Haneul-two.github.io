@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>상담 Q&amp;A 사이트의 구조</title>
+<style>body{margin:0;padding:32px 16px;background:#f3f2ed;color:#252824;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}.frame{max-width:560px;margin:auto}.eyebrow{font-size:12px;color:#5b6356;margin:0 0 8px}h1{font-family:Georgia,"Batang",serif;font-weight:400;font-size:28px;margin:0 0 24px}svg{display:block;width:100%;height:auto}</style>
+</head>
+<body>
+<div class="frame">
+<p class="eyebrow">Twosky Work · 구조도</p>
+<h1>상담 Q&amp;A 사이트의 구조</h1>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 680" role="img" aria-labelledby="qa-site-title qa-site-desc" font-family="&#39;Malgun Gothic&#39;,&#39;Apple SD Gothic Neo&#39;,sans-serif">
+<title id="qa-site-title">상담 Q&amp;A 사이트의 구조</title>
+<desc id="qa-site-desc">노션 Q&amp;A를 읽기 전용으로 받아 문서 파일과 git 이력으로 쌓고, 검색·분류를 갖춘 정적 사이트로 만들어 사내 공유 폴더에 복사하면 상담원이 더블클릭으로 연다.</desc>
+<defs><marker id="qa-site-arrow-code" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5b6356"/></marker><marker id="qa-site-arrow-external" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3d5a80"/></marker></defs>
+<rect width="480" height="680" fill="#f3f2ed"/>
+<rect x="8" y="28" width="296" height="584" rx="8" fill="rgba(37,40,36,0.025)" stroke="#5b6356" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="16" y="48" font-size="16" fill="#5b6356">사내망 안 (밖으로 나가지 않음)</text>
+<line x1="156" y1="120" x2="156" y2="148" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-site-arrow-code)"/>
+<line x1="156" y1="216" x2="156" y2="244" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-site-arrow-code)"/>
+<line x1="156" y1="312" x2="156" y2="340" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-site-arrow-code)"/>
+<line x1="156" y1="408" x2="156" y2="436" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-site-arrow-code)"/>
+<line x1="156" y1="504" x2="156" y2="532" stroke="#5b6356" stroke-width="1.2" marker-end="url(#qa-site-arrow-code)"/>
+<line x1="324" y1="100" x2="300" y2="100" stroke="#3d5a80" stroke-width="1.2" marker-end="url(#qa-site-arrow-external)"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="56" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="76" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="88" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="1">1</text>
+<text x="64" y="84" font-size="20" fill="#252824" font-weight="600">노션에서 받아 온다</text>
+<text x="64" y="108" font-size="16" fill="#5b6356">읽기만 한다</text>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="152" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="172" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="184" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="2">2</text>
+<text x="64" y="180" font-size="20" fill="#252824" font-weight="600">문서 파일로 저장</text>
+<text x="64" y="204" font-size="16" fill="#5b6356">이미지도 내 컴퓨터로</text>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="248" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="268" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="280" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="3">3</text>
+<text x="64" y="276" font-size="20" fill="#252824" font-weight="600">git에 기록</text>
+<text x="64" y="300" font-size="16" fill="#5b6356">이게 곧 수정 이력</text>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="344" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="364" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="376" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="4">4</text>
+<text x="64" y="372" font-size="20" fill="#252824" font-weight="600">사이트를 만든다</text>
+<text x="64" y="396" font-size="16" fill="#5b6356">분류 15개·줄임말 검색</text>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="440" width="280" height="64" rx="6" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<rect x="28" y="460" width="24" height="24" rx="4" fill="#252824"/>
+<text x="40" y="472" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="5">5</text>
+<text x="64" y="468" font-size="20" fill="#252824" font-weight="600">공유 폴더로 복사</text>
+<text x="64" y="492" font-size="16" fill="#5b6356">사내망, 읽기 전용</text>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="16" y="536" width="280" height="64" rx="6" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1.6"/>
+<rect x="28" y="556" width="24" height="24" rx="4" fill="#85622a"/>
+<text x="40" y="568" font-size="16" fill="#ffffff" font-weight="700" text-anchor="middle" dominant-baseline="central" data-step="6">6</text>
+<text x="64" y="564" font-size="20" fill="#252824" font-weight="600">상담원이 더블클릭</text>
+<text x="64" y="588" font-size="16" fill="#5b6356">서버·로그인 없이</text>
+<rect x="324" y="56" width="144" height="64" rx="6" fill="#f3f2ed"/>
+<rect x="324" y="56" width="144" height="64" rx="6" fill="rgba(61,90,128,0.06)" stroke="#3d5a80" stroke-width="1"/>
+<text x="396" y="84" font-size="16" fill="#252824" text-anchor="middle" font-weight="600">노션</text>
+<text x="396" y="104" font-size="16" fill="#5b6356" text-anchor="middle">Q&amp;A 212건</text>
+<line x1="16" y1="632" x2="464" y2="632" stroke="#d6d8ce" stroke-width="0.8"/>
+<rect x="16" y="648" width="16" height="16" rx="4" fill="rgba(133,98,42,0.12)" stroke="#85622a" stroke-width="1"/>
+<text x="40" y="660" font-size="16" fill="#252824" data-legend="human">사람</text>
+<rect x="92" y="648" width="16" height="16" rx="4" fill="#ffffff" stroke="#252824" stroke-width="1"/>
+<text x="116" y="660" font-size="16" fill="#252824" data-legend="code">프로그램</text>
+<rect x="200" y="648" width="16" height="16" rx="4" fill="rgba(61,90,128,0.06)" stroke="#3d5a80" stroke-width="1"/>
+<text x="224" y="660" font-size="16" fill="#252824" data-legend="external">바깥 서비스</text>
+</svg>
+</div>
+</body>
+</html>
