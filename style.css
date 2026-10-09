@@ -2,8 +2,8 @@
 @font-face{font-family:"Pretendard";src:url(fonts/pretendard-regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Pretendard";src:url(fonts/pretendard-semibold.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"Pretendard";src:url(fonts/pretendard-extrabold.woff2) format("woff2");font-weight:800;font-style:normal;font-display:swap}
-:root{--paper:#f3f2ed;--card:#faf9f5;--ink:#252824;--muted:#687062;--label:#5b6356;--line:#d6d8ce;--lineSoft:#e2e3d9;--accent:#367662;--work:#192722;--game:#202d31;--toy:#e7dcc6;--3d:#101e25;--max-w:1160px;--gutter:48px;--gutter-m:20px;--art-h:232px;--art-h-m:200px;--hover-lift:6px;--hover-ms:180ms;--cube:18s;--reveal-ms:600ms;--reveal-shift:18px;--fade-ms:700ms;--bg:#060a1c;--surface:#0d1430cc;--surface-solid:#0d1430;--text:#f1f4ff;--muted:#c3cbe8;--label:#aab3d6;--line:#ffffff24;--accent:#5eead4;--accent-ink:#04201b;--hero-1:#5eead4;--hero-2:#c4b5fd;--hero-3:#f9a8d4;--c-work:#34d399;--c-game:#f472b6;--c-toy:#fbbf24;--c-3d:#60a5fa;--sky-1:#060a1c;--sky-2:#0b1235;--sky-3:#0b1235;}
-[data-theme="day"]{--bg:#bfe3ff;--surface:#ffffffdb;--surface-solid:#ffffff;--text:#111a33;--muted:#36415f;--label:#414c6c;--line:#111a3324;--accent:#0f766e;--accent-ink:#ffffff;--hero-1:#0e7490;--hero-2:#7c3aed;--hero-3:#be185d;--c-work:#047857;--c-game:#be185d;--c-toy:#b45309;--c-3d:#1d4ed8;--sky-1:#8fd0ff;--sky-2:#ffd6e8;--sky-3:#ffe3c4;}
+:root{--paper:#f3f2ed;--card:#faf9f5;--ink:#252824;--muted:#687062;--label:#5b6356;--line:#d6d8ce;--lineSoft:#e2e3d9;--accent:#367662;--work:#192722;--game:#202d31;--toy:#e7dcc6;--3d:#101e25;--motion:#150f26;--max-w:1160px;--gutter:48px;--gutter-m:20px;--art-h:232px;--art-h-m:200px;--hover-lift:6px;--hover-ms:180ms;--cube:18s;--reveal-ms:600ms;--reveal-shift:18px;--fade-ms:700ms;--bg:#060a1c;--surface:#0d1430cc;--surface-solid:#0d1430;--text:#f1f4ff;--muted:#c3cbe8;--label:#aab3d6;--line:#ffffff24;--accent:#5eead4;--accent-ink:#04201b;--hero-1:#5eead4;--hero-2:#c4b5fd;--hero-3:#f9a8d4;--c-work:#34d399;--c-game:#f472b6;--c-toy:#fbbf24;--c-3d:#60a5fa;--c-motion:#c4a1ff;--sky-1:#060a1c;--sky-2:#0b1235;--sky-3:#0b1235;}
+[data-theme="day"]{--bg:#bfe3ff;--surface:#ffffffdb;--surface-solid:#ffffff;--text:#111a33;--muted:#36415f;--label:#414c6c;--line:#111a3324;--accent:#0f766e;--accent-ink:#ffffff;--hero-1:#0e7490;--hero-2:#7c3aed;--hero-3:#be185d;--c-work:#047857;--c-game:#be185d;--c-toy:#b45309;--c-3d:#1d4ed8;--c-motion:#6d28d9;--sky-1:#8fd0ff;--sky-2:#ffd6e8;--sky-3:#ffe3c4;}
 /* Twosky v2 — "두 하늘". 밤(기본): 오로라 셰이더 위 반투명 표면 + 네온 섹션색. 낮: 노을 하늘 + 흰 표면.
    색·치수 변수는 빌드가 :root / [data-theme="day"] 로 앞에 붙인다(src/config.mjs). 카드에는 blur를 쓰지 않는다(사양서 6장). */
 *{box-sizing:border-box}
@@ -72,10 +72,11 @@ h1,.d-sec h2,.group h2,.project h2,.stat b,.d-stats b,.brand,.cover-word{font-fa
 
 /* 홈 섹션 카드 */
 .projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.projects>.project:last-child:nth-child(odd){grid-column:1/-1} /* 섹션이 홀수 개면 마지막 카드가 혼자 남지 않게 한 줄을 채운다 */
 .project{--glow:var(--accent);position:relative;color:inherit;text-decoration:none;display:block;overflow:hidden;border-radius:24px;background:var(--surface);border:1px solid var(--line);
   box-shadow:inset 0 1px 0 #ffffff1f;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));transition:transform .25s ease-out,box-shadow .25s,border-color .25s}
 .project:hover,.project:focus-visible{--lift:calc(var(--hover-lift) * -1);border-color:var(--glow);box-shadow:inset 0 1px 0 #ffffff1f,0 18px 40px #00000040,0 0 36px color-mix(in srgb,var(--glow) 30%,transparent)}
-.project--work{--glow:var(--c-work)}.project--game{--glow:var(--c-game)}.project--toy{--glow:var(--c-toy)}.project--3d{--glow:var(--c-3d)}
+.project--work{--glow:var(--c-work)}.project--game{--glow:var(--c-game)}.project--toy{--glow:var(--c-toy)}.project--3d{--glow:var(--c-3d)}.project--motion{--glow:var(--c-motion)}
 [data-tilt]::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .25s;
   background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--glow,var(--accent)) 22%,transparent),transparent 60%)}
 [data-tilt]:hover::after{opacity:1}
@@ -113,6 +114,13 @@ h1,.d-sec h2,.group h2,.project h2,.stat b,.d-stats b,.brand,.cover-word{font-fa
 .toy-caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:12px;color:#4a4436;letter-spacing:1px}
 .art--3d{background:radial-gradient(circle at 50% 45%,#1d3a5c,var(--3d) 65%)}
 .art--3d::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#9fc3d455 1px,transparent 1.5px);background-size:22px 22px}
+.art--motion{background:radial-gradient(circle at 50% 40%,#3b1f63,var(--motion) 68%)}
+.mo-frame{position:absolute;left:50%;top:44%;width:176px;height:99px;margin:-50px 0 0 -88px;border-radius:10px;border:1px solid #c4a1ff88;background:linear-gradient(160deg,#ffffff14,#00000033);box-shadow:0 0 30px #8b5cf655}
+.mo-play{position:absolute;left:50%;top:50%;margin:-14px 0 0 -9px;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #f3e8ff}
+.mo-track{position:absolute;left:24px;right:24px;bottom:46px;height:3px;border-radius:2px;background:#ffffff26}
+.mo-head{position:absolute;left:0;top:-3px;width:9px;height:9px;border-radius:50%;background:#f3e8ff;box-shadow:0 0 10px #c4a1ff;animation:mo-run 6s linear infinite}
+@keyframes mo-run{to{left:calc(100% - 9px)}}
+.mo-time{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:12px;color:#e9d5ffcc;letter-spacing:1px;font-variant-numeric:tabular-nums}
 .scene{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-58px 0 0 -48px;perspective:520px}
 .cube{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(35deg);animation:spin var(--cube) linear infinite}
 .cube i{position:absolute;inset:0;border:1px solid #93c5fdcc;background:#60a5fa1a;box-shadow:0 0 16px #60a5fa55 inset}
@@ -130,7 +138,7 @@ h1,.d-sec h2,.group h2,.project h2,.stat b,.d-stats b,.brand,.cover-word{font-fa
 .sec-head--all{grid-template-columns:1fr;padding-bottom:16px}
 .sec-head .art{border-radius:24px;border:1px solid var(--line);box-shadow:0 20px 50px #00000040}
 .sec-head h1{font-size:clamp(40px,6vw,76px);line-height:1.1;margin:10px 0 0}
-.sec-head--work{--glow:var(--c-work)}.sec-head--game{--glow:var(--c-game)}.sec-head--toy{--glow:var(--c-toy)}.sec-head--3d{--glow:var(--c-3d)}.sec-head--all{--glow:var(--accent)}
+.sec-head--work{--glow:var(--c-work)}.sec-head--game{--glow:var(--c-game)}.sec-head--toy{--glow:var(--c-toy)}.sec-head--3d{--glow:var(--c-3d)}.sec-head--motion{--glow:var(--c-motion)}.sec-head--all{--glow:var(--accent)}
 .sec-head h1{text-shadow:0 0 40px color-mix(in srgb,var(--glow) 45%,transparent)}
 .sec-sub{font-size:20px;font-weight:700;color:var(--glow);margin:10px 0 12px}
 .sec-intro{color:var(--muted);font-size:16px;line-height:1.85;margin:0;max-width:36em}
@@ -144,7 +152,7 @@ h1,.d-sec h2,.group h2,.project h2,.stat b,.d-stats b,.brand,.cover-word{font-fa
 .group .cards{margin:0}
 .cards--wide{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .card{--glow:var(--accent)}
-.card--work{--glow:var(--c-work)}.card--game{--glow:var(--c-game)}.card--toy{--glow:var(--c-toy)}.card--3d{--glow:var(--c-3d)}
+.card--work{--glow:var(--c-work)}.card--game{--glow:var(--c-game)}.card--toy{--glow:var(--c-toy)}.card--3d{--glow:var(--c-3d)}.card--motion{--glow:var(--c-motion)}
 .card-link{position:relative;display:flex;flex-direction:column;height:100%;overflow:hidden;border-radius:20px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;
   box-shadow:inset 0 1px 0 #ffffff1a;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));transition:transform .25s ease-out,box-shadow .25s,border-color .25s}
 a.card-link:hover,a.card-link:focus-visible{--lift:calc(var(--hover-lift) * -1);border-color:var(--glow);box-shadow:inset 0 1px 0 #ffffff1a,0 16px 36px #00000040,0 0 30px color-mix(in srgb,var(--glow) 28%,transparent)}
@@ -155,6 +163,11 @@ a.card-link:hover,a.card-link:focus-visible{--lift:calc(var(--hover-lift) * -1);
 .cover--work{background-color:var(--work);background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:16px 16px}
 .cover--game{background:radial-gradient(ellipse at 50% 120%,#7c2d6b,#2a1636 70%)}
 .cover--toy{background:linear-gradient(135deg,#b45309,#7c2d12)}
+.cover--motion{background:radial-gradient(ellipse at 50% 120%,#5b2a86,#150f26 70%)}
+.cards--video{grid-template-columns:repeat(auto-fill,minmax(min(100%,560px),1fr))}
+.cover--video{aspect-ratio:16/9;background:#000;object-fit:contain;border-radius:20px 20px 0 0}
+.card--video .card-cta{text-decoration:none}
+.card--video .card-cta:hover,.card--video .card-cta:focus-visible{text-decoration:underline}
 .cover--3d{background-color:#0b1d3a;background-image:radial-gradient(#93c5fd66 1px,transparent 1.5px);background-size:14px 14px}
 .card-body{display:flex;flex-direction:column;gap:8px;padding:16px 18px 18px;flex:1}
 .badge{align-self:flex-start;flex:none;font-size:12px;font-weight:700;line-height:1.6;padding:1px 10px;border-radius:999px;border:1px solid var(--line);color:var(--label);white-space:nowrap}

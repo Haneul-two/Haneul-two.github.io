@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>전체 작업물 · Twosky</title>
-<meta name="description" content="네 섹션의 작업물을 한곳에서 찾고 거릅니다.">
+<meta name="description" content="다섯 섹션의 작업물을 한곳에서 찾고 거릅니다.">
 <meta name="color-scheme" content="dark light">
 <script src="theme.js"></script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
 <div class="wrap">
 <header class="top">
 <a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
-<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="all.html" aria-current="page">전체</a></nav>
+<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="motion.html">Motion Graphic</a><a href="all.html" aria-current="page">전체</a></nav>
 <div class="tools">
 <button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
 <button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
@@ -32,13 +32,13 @@
 <main id="main">
 <section class="sec-head sec-head--all">
 <div class="sec-copy">
-<p class="number">39 / 전체</p>
+<p class="number">40 / 전체</p>
 <h1>전체 작업물</h1>
-<p class="sec-intro">네 섹션의 작업물을 한곳에서 찾고 거릅니다.<span class="js-only"> 검색 단축키로 어느 쪽에서든 찾을 수 있습니다.</span></p>
+<p class="sec-intro">다섯 섹션의 작업물을 한곳에서 찾고 거릅니다.<span class="js-only"> 검색 단축키로 어느 쪽에서든 찾을 수 있습니다.</span></p>
 </div>
 </section>
 <form class="filters" data-filters hidden role="search" aria-label="작업물 거르기">
-<div class="filter-row" role="group" aria-label="섹션"><button type="button" class="chip" data-s="" aria-pressed="true">전체</button><button type="button" class="chip" data-s="work" aria-pressed="false">Work</button><button type="button" class="chip" data-s="game" aria-pressed="false">Game</button><button type="button" class="chip" data-s="toy" aria-pressed="false">Toy</button><button type="button" class="chip" data-s="3d" aria-pressed="false">3D</button></div>
+<div class="filter-row" role="group" aria-label="섹션"><button type="button" class="chip" data-s="" aria-pressed="true">전체</button><button type="button" class="chip" data-s="work" aria-pressed="false">Work</button><button type="button" class="chip" data-s="game" aria-pressed="false">Game</button><button type="button" class="chip" data-s="toy" aria-pressed="false">Toy</button><button type="button" class="chip" data-s="3d" aria-pressed="false">3D</button><button type="button" class="chip" data-s="motion" aria-pressed="false">Motion Graphic</button></div>
 <div class="filter-row" role="group" aria-label="상태"><button type="button" class="chip" data-st="" aria-pressed="true">전체</button><button type="button" class="chip" data-st="live" aria-pressed="false">공개</button><button type="button" class="chip" data-st="detail" aria-pressed="false">구조도</button><button type="button" class="chip" data-st="private" aria-pressed="false">비공개</button><button type="button" class="chip" data-st="next" aria-pressed="false">만드는 중</button></div>
 <div class="filter-row filter-row--search">
 <label class="sr" for="filter-q">이름·설명 검색</label>
@@ -46,7 +46,7 @@
 <label class="sr" for="filter-sort">정렬</label>
 <select id="filter-sort" class="filter-sort"><option value="section">섹션순</option><option value="name">이름순</option></select>
 </div>
-<p class="filter-count" aria-live="polite"><b data-shown>39</b>개 / 전체 39개</p>
+<p class="filter-count" aria-live="polite"><b data-shown>40</b>개 / 전체 40개</p>
 </form>
 <ul class="cards cards--all" data-cards><li class="card card--detail card--work reveal" id="w-list-extractor" data-section="work" data-status="private" data-detail data-name="발송 명단 추출 앱"><a class="card-link" href="work/list-extractor.html" data-tilt><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 명단 추출 앱</span></span>
 <span class="card-body">
@@ -282,7 +282,13 @@
 <span class="card-name">느티마을</span>
 <span class="card-note">건설·주민 이동·재정 정산이 돌아가는 3D 도시 시뮬레이터.</span>
 
-</span></div></li></ul>
+</span></div></li><li class="card card--motion reveal" id="w-seoul-night" data-section="motion" data-status="live" data-name="서울의 밤"><a class="card-link" href="https://haneul-two.github.io/motion/seoul-night.mp4" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/seoul-night.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">서울의 밤<span aria-hidden="true"> ↗</span></span>
+<span class="card-note">입자가 모여 서울이 되고, 궁에서 한강, 남산까지 18초 동안 날아갑니다.</span>
+<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
+</span></a></li></ul>
 <div class="empty empty--filter" data-empty hidden>
 <p>조건에 맞는 작업이 없습니다.</p>
 <button type="button" class="btn" data-reset>필터 초기화</button>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Graphic · Twosky</title>
+<meta name="description" content="코드로 짓고 코드로 찍은 3D 모션그래픽. 첫 편은 서울의 밤입니다.">
+<meta name="color-scheme" content="dark light">
+<script src="theme.js"></script>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="sky.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<canvas id="sky" class="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="motion.html" aria-current="page">Motion Graphic</a><a href="all.html">전체</a></nav>
+<div class="tools">
+<button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+</div>
+</header>
+<main id="main">
+<section class="sec-head sec-head--motion">
+<div class="sec-copy">
+<p class="number">05 / Motion Graphic</p>
+<h1>Motion Graphic</h1>
+<p class="sec-sub">움직이는 그림</p>
+<p class="sec-intro">코드로 짓고 코드로 찍은 3D 모션그래픽. 첫 편은 서울의 밤입니다.</p>
+</div>
+<div class="art art--motion" aria-hidden="true">
+<span class="mo-frame"><span class="mo-play"></span></span>
+<span class="mo-track"><span class="mo-head"></span></span>
+<span class="mo-time">00:00 / 00:18 · 60fps</span>
+</div>
+</section>
+<ul class="cards cards--video"><li class="card card--video card--motion reveal" id="w-seoul-night" data-section="motion" data-status="live" data-name="서울의 밤"><div class="card-link">
+<video class="cover cover--video" controls playsinline preload="metadata" poster="motion/seoul-night.jpg" width="1920" height="1080"><source src="motion/seoul-night.mp4" type="video/mp4"></video>
+<span class="card-body">
+<span class="badge badge--live">공개</span>
+<span class="card-name">서울의 밤</span>
+<span class="card-note">입자가 모여 서울이 되고, 궁에서 한강, 남산까지 18초 동안 날아갑니다.</span>
+<a class="card-cta" href="https://haneul-two.github.io/motion/seoul-night.mp4" target="_blank" rel="noopener">영상 파일로 열기 ↗<span class="sr"> (새 탭)</span></a>
+</span></div></li></ul>
+</main>
+<footer class="foot">
+<span>© 2026 Twosky · 하늘</span>
+<span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
+<span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
+</footer>
+</div>
+<dialog class="palette" id="palette" aria-label="작업물 검색">
+<div class="palette-box">
+<label class="sr" for="palette-q">작업물·섹션 검색</label>
+<input id="palette-q" class="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="작업물, 섹션, 상태를 찾아보세요" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+<ul id="palette-list" class="palette-list" role="listbox" aria-label="검색 결과"></ul>
+<p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 열기 · <kbd>Esc</kbd> 닫기</p>
+</div>
+</dialog>
+</body>
+</html>
