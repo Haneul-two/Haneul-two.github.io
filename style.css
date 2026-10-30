@@ -50,6 +50,7 @@ h1,.d-sec h2,.group h2,.band-time,.stat b,.d-stats b,.brand,.cover-word,.word,.s
 .tools{display:flex;gap:6px}
 .tool{font:inherit;font-size:13px;font-weight:600;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:36px}
 .tool:hover{border-color:var(--text)}
+.tool--about{text-decoration:none}
 .kbd,kbd{font:11px/1.4 ui-monospace,Consolas,monospace;padding:1px 6px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
 .tool--theme{width:36px;padding:0;justify-content:center}
 .theme-icon{width:16px;height:16px;border-radius:50%;background:transparent;box-shadow:inset -5px -3px 0 0 var(--text)}
@@ -327,12 +328,14 @@ html.fx .reveal.in{opacity:1;translate:none}
 @media (min-width:1100px){
   .days .shell{padding-left:calc(var(--gutter) + var(--rail) + var(--rail-gap))}
   .rail{display:block;position:sticky;top:104px;height:0;z-index:5}
+  /* 세로 시간선 위의 점. 지금 시간대는 점이 차오르고 둘레에 빛이 번진다. */
   .rail-in{list-style:none;margin:0 auto;padding:0 var(--gutter);max-width:var(--max-w);display:grid;gap:14px;font-size:12.5px;font-weight:600;letter-spacing:.06em}
-  .rail-in li{width:var(--rail)}
-  .rail-in a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--muted);white-space:nowrap}
-  .rail-in a::before{content:"";width:24px;height:1px;background:currentColor;transition:width .25s}
+  .rail-in li{width:var(--rail);position:relative}
+  .rail-in li+li::before{content:"";position:absolute;left:5px;bottom:calc(50% + 7px);height:100%;border-left:1px dashed color-mix(in srgb,var(--muted) 55%,transparent)}
+  .rail-in a{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--muted);white-space:nowrap}
+  .rail-in a::before{content:"";flex:none;box-sizing:border-box;width:11px;height:11px;border-radius:50%;border:1.5px solid currentColor;background:var(--surface);transition:background .25s,box-shadow .25s,transform .25s}
   .rail-in a.on,.rail-in a[aria-current]{color:var(--now-c)}
-  .rail-in a.on::before{width:52px}
+  .rail-in a.on::before{background:currentColor;transform:scale(1.25);box-shadow:0 0 0 4px color-mix(in srgb,currentColor 20%,transparent)}
   .rail-in b{font-weight:600}
   .rail-in small{font-family:"Pretendard",sans-serif;font-weight:400;letter-spacing:0}
 }
