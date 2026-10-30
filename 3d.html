@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<html lang="ko" data-theme="day" data-theme-key="twosky-theme" data-root="">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
@@ -14,25 +14,26 @@
 <link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script src="data.js" defer></script>
-<script src="sky.js" defer></script>
 <script src="app.js" defer></script>
 </head>
-<body>
+<body data-time="3d">
 <a class="skip" href="#main">본문 바로가기</a>
-<canvas id="sky" class="sky" aria-hidden="true"></canvas>
-<div class="wrap">
 <header class="top">
-<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
-<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html" aria-current="page">3D</a><a href="motion.html">Motion Graphic</a><a href="all.html">전체</a></nav>
+<div class="top-in">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html" data-nav="work">Work</a><a href="game.html" data-nav="game">Game</a><a href="toy.html" data-nav="toy">Toy</a><a href="3d.html" data-nav="3d" aria-current="page">3D</a><a href="motion.html" data-nav="motion">Motion Graphic</a><a href="all.html" data-nav="all">전체</a></nav>
 <div class="tools">
 <button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
-<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>밤 하늘로 바꾸기</span></button>
+</div>
 </div>
 </header>
 <main id="main">
+<div class="band band--3d band--page">
+<div class="shell">
 <section class="sec-head sec-head--3d">
 <div class="sec-copy">
-<p class="number">04 / 3D</p>
+<p class="number"><span class="sec-time">22:00</span> 04 / 밤</p>
 <h1>3D</h1>
 <p class="sec-sub">입체 실험</p>
 <p class="sec-intro">입자 6만 5천 개, 터지는 보물상자, 작은 도시. 화면 속 공간을 다루는 실험.</p>
@@ -42,44 +43,37 @@
 <span class="axis">x · y · z</span>
 </div>
 </section>
-<ul class="cards"><li class="card card--3d reveal" id="w-microbot-morph" data-section="3d" data-status="live" data-name="입자 모핑"><a class="card-link" href="https://haneul-two.github.io/microbot-morph/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/microbot-morph.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
-<span class="badge badge--live">공개</span>
+<ul class="cards cards--two"><li class="card card--3d reveal" id="w-microbot-morph" data-section="3d" data-status="live" data-name="입자 모핑"><a class="card-link" href="https://haneul-two.github.io/microbot-morph/" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/microbot-morph.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
 <span class="card-name">입자 모핑<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">입자 65,536개가 14가지 형상 사이를 날아 다시 맺힌다.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--3d reveal" id="w-portfolio-bear" data-section="3d" data-status="live" data-name="포트폴리오 입자 곰"><a class="card-link" href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/portfolio-bear.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
 <span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">입자 65,536개가 14가지 형상 사이를 날아 다시 맺힌다.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--3d reveal" id="w-portfolio-bear" data-section="3d" data-status="live" data-name="포트폴리오 입자 곰"><a class="card-link" href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/portfolio-bear.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
 <span class="card-name">포트폴리오 입자 곰<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">읽는 구간마다 입자가 곰·별자리·하늘로 모양을 바꾸는 소개 사이트.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--private card--3d reveal" id="w-midnight-store" data-section="3d" data-status="private" data-name="심야 편의점 03:17"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">심야 편의점 03:17</span></span>
-<span class="card-body">
-<span class="badge badge--private">비공개</span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">읽는 구간마다 입자가 곰·별자리·하늘로 모양을 바꾸는 소개 사이트.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--private card--3d reveal" id="w-midnight-store" data-section="3d" data-status="private" data-name="심야 편의점 03:17"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">심야 편의점 03:17</span></span></span><span class="card-line">
 <span class="card-name">심야 편의점 03:17</span>
-<span class="card-note">비 오는 새벽 편의점에서 물건 여섯 개를 관찰하는 3D 웹 전시.</span>
-
-</span></div></li><li class="card card--private card--3d reveal" id="w-chest-highlight" data-section="3d" data-status="private" data-name="보물상자 하이라이트 연출"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">보물상자 하이라이트 연출</span></span>
-<span class="card-body">
 <span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">비 오는 새벽 편의점에서 물건 여섯 개를 관찰하는 3D 웹 전시.</span></div></li><li class="card card--private card--3d reveal" id="w-chest-highlight" data-section="3d" data-status="private" data-name="보물상자 하이라이트 연출"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">보물상자 하이라이트 연출</span></span></span><span class="card-line">
 <span class="card-name">보물상자 하이라이트 연출</span>
-<span class="card-note">등급 상승 → 폭발 → 보상 공개까지 이어지는 모바일 게임식 연출.</span>
-
-</span></div></li><li class="card card--private card--3d reveal" id="w-neuti-village" data-section="3d" data-status="private" data-name="느티마을"><div class="card-link"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">느티마을</span></span>
-<span class="card-body">
 <span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">등급 상승 → 폭발 → 보상 공개까지 이어지는 모바일 게임식 연출.</span></div></li><li class="card card--private card--3d reveal" id="w-neuti-village" data-section="3d" data-status="private" data-name="느티마을"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">느티마을</span></span></span><span class="card-line">
 <span class="card-name">느티마을</span>
-<span class="card-note">건설·주민 이동·재정 정산이 돌아가는 3D 도시 시뮬레이터.</span>
-
-</span></div></li></ul>
+<span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">건설·주민 이동·재정 정산이 돌아가는 3D 도시 시뮬레이터.</span></div></li></ul>
+</div>
+</div>
 </main>
 <footer class="foot">
+<div class="foot-in">
 <span>© 2026 Twosky · 하늘</span>
 <span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
 <span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
-</footer>
 </div>
+</footer>
 <dialog class="palette" id="palette" aria-label="작업물 검색">
 <div class="palette-box">
 <label class="sr" for="palette-q">작업물·섹션 검색</label>

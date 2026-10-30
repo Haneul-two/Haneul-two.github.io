@@ -34,7 +34,9 @@
     syncTheme();
     themeBtn.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'day' ? 'night' : 'day';
+      root.classList.add('theme-switch'); // 바꾸는 순간엔 색 전환을 끈다: 바탕만 늦게 바뀌면 글자 대비가 잠깐 1:1까지 떨어진다
       root.setAttribute('data-theme', next);
+      requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.remove('theme-switch'); }); });
       try { localStorage.setItem(D.config.theme.storageKey, next); } catch (e) { /* 이번 방문만 */ }
       syncTheme();
     });
@@ -49,7 +51,7 @@
   D.sections.forEach(function (s) { entries.push({ kind: '섹션', name: s.name, note: s.sub, go: url(s.page), page: true, glow: s.id }); });
   D.works.forEach(function (w) {
     var hay = [w.name, w.note, sectionOf[w.section].name, STATUS[w.status], w.detail ? '구조도' : ''].join(' ').toLowerCase();
-    entries.push({ kind: sectionOf[w.section].name.replace(/^Twosky /, '') + ' · ' + (w.detail ? '구조도' : STATUS[w.status]), name: w.name, note: w.note, work: w, hay: hay, glow: w.section });
+    entries.push({ kind: sectionOf[w.section].name + ' · ' + (w.detail ? '구조도' : STATUS[w.status]), name: w.name, note: w.note, work: w, hay: hay, glow: w.section });
   });
   function search(q) {
     var words = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -101,6 +103,7 @@
     closePalette();
     if (!w) { location.href = e.go; return; }
     if (w.detail) location.href = url('work/' + w.id + '.html');
+    else if (w.section === 'motion') location.href = url('motion.html') + '#w-' + w.id; // 영상은 그 쪽 안에서 재생(사양서 3장)
     else if (w.status === 'live') window.open(w.href, '_blank', 'noopener');
     else location.href = url('all.html') + '?q=' + encodeURIComponent(w.name) + '#w-' + w.id;
   }
@@ -226,12 +229,16 @@
       card.textContent = '';
       card.style.setProperty('--glow', 'var(--c-' + w.section + ')');
       var cov;
-      if (w.cover) { cov = document.createElement('img'); cov.className = 'cover'; cov.src = base + 'covers/' + w.cover; cov.alt = ''; cov.width = 480; cov.height = 300; }
+      if (w.cover) { cov = document.createElement('img'); cov.className = 'cover'; cov.src = base + 'covers/' + w.cover; cov.alt = ''; cov.width = 480; cov.height = 320; }
       else { cov = document.createElement('span'); cov.className = 'cover cover--type cover--' + w.section; cov.setAttribute('aria-hidden', 'true'); var cw = document.createElement('span'); cw.className = 'cover-word'; cw.textContent = w.name; cov.appendChild(cw); }
       var h = document.createElement('p'); h.className = 'pick-name'; h.textContent = w.name;
       var n = document.createElement('p'); n.className = 'pick-note'; n.textContent = sectionOf[w.section].name + ' · ' + w.note;
       card.appendChild(cov); card.appendChild(h); card.appendChild(n);
-      openA.href = w.href;
+      var inPage = w.section === 'motion';
+      openA.href = inPage ? base + 'motion.html#w-' + w.id : w.href;
+      if (inPage) { openA.removeAttribute('target'); } else { openA.target = '_blank'; }
+      $('[data-pick-label]', pick).textContent = inPage ? '보러 가기 →' : '열기 ↗';
+      $('[data-pick-newtab]', pick).hidden = inPage;
       card.classList.remove('spin'); void card.offsetWidth; card.classList.add('spin');
     };
     show(pickBtn);
@@ -280,24 +287,56 @@
     });
   }
 
-  // ── 카드 기울기 + 따라오는 빛(마우스, 모션 축소 아님) ──
-  if (!reduce && window.matchMedia && matchMedia('(pointer: fine)').matches) {
-    $$('[data-tilt]').forEach(function (el) {
-      var raf = 0, ev = null;
-      var paint = function () {
-        raf = 0;
-        var r = el.getBoundingClientRect(), px = (ev.clientX - r.left) / r.width, py = (ev.clientY - r.top) / r.height;
-        el.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
-        el.style.setProperty('--my', (py * 100).toFixed(1) + '%');
-        el.style.setProperty('--rx', ((0.5 - py) * 2 * M.tiltMaxDeg).toFixed(2) + 'deg');
-        el.style.setProperty('--ry', ((px - 0.5) * 2 * M.tiltMaxDeg).toFixed(2) + 'deg');
-      };
-      el.addEventListener('pointermove', function (e) { if (e.pointerType !== 'mouse') return; ev = e; if (!raf) raf = requestAnimationFrame(paint); });
-      el.addEventListener('pointerleave', function () {
-        if (raf) { cancelAnimationFrame(raf); raf = 0; }
-        ['--mx', '--my', '--rx', '--ry'].forEach(function (k) { el.style.removeProperty(k); });
+  // ── 지평선 다이얼(홈 첫 화면): 단추에 올리면 해·하늘을 그 시간으로 미리 옮기고, 누르면 그 섹션으로 간다 ──
+  var hz = $('[data-horizon]');
+  if (hz) {
+    var dials = $$('[data-dial]', hz);
+    var preview = function (b) {
+      dials.forEach(function (x) { x.classList.toggle('on', x === b); });
+      if (b) { hz.setAttribute('data-at', b.getAttribute('data-dial')); hz.style.setProperty('--p', b.getAttribute('data-orb')); }
+      else { hz.removeAttribute('data-at'); hz.style.removeProperty('--p'); }
+    };
+    dials.forEach(function (b) {
+      b.addEventListener('pointerenter', function () { preview(b); });
+      b.addEventListener('focus', function () { preview(b); });
+      // 이동은 기본 앵커에 맡긴다: 방문 기록이 쌓여 뒤로 가기가 되고, 부드러운 스크롤은 CSS가 모션 축소를 실시간으로 따른다.
+      b.addEventListener('click', function (ev) {
+        if (ev.button !== 0 || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return; // 새 탭·새 창으로 여는 클릭은 이 쪽 포커스를 건드리지 않는다
+        var band = document.getElementById(b.getAttribute('href').slice(1));
+        var h = band && $('h2', band);
+        if (h) setTimeout(function () { h.focus({ preventScroll: true }); }, 0); // 키보드 사용자는 그 섹션 제목에서 이어 간다
       });
     });
+    $('.dial', hz).addEventListener('pointerleave', function () { if (!hz.contains(document.activeElement)) preview(null); });
+    hz.addEventListener('focusout', function (ev) { if (!hz.contains(ev.relatedTarget)) preview(null); });
+    // 부드러운 스크롤 도중에 뒤로·앞으로 가면 앞 스크롤이 이어져 엉뚱한 곳에 멈춘다 → 주소의 자리로 다시 보낸다
+    window.addEventListener('popstate', function () {
+      var at = location.hash && document.getElementById(location.hash.slice(1));
+      if (at) at.scrollIntoView({ behavior: 'instant' }); else window.scrollTo({ top: 0, behavior: 'instant' }); // 되돌아가기는 정확한 자리가 먼저
+    });
+  }
+
+  // ── 하루 스크롤(홈): 화면 높이 40% 선에 걸린 섹션 블록 → body data-time · 목차 표시 · 머리 메뉴 현재 표시 ──
+  var bands = $$('.days .band[data-time]');
+  if (bands.length && 'IntersectionObserver' in window) {
+    var railLinks = $$('[data-rail]'), navLinks = $$('[data-nav]');
+    var setTime = function (id) {
+      document.body.setAttribute('data-time', id || 'dawn');
+      railLinks.forEach(function (a) {
+        var on = a.getAttribute('data-rail') === id;
+        a.classList.toggle('on', on);
+        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+      navLinks.forEach(function (a) { if (a.getAttribute('data-nav') === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    };
+    var inView = {};
+    var dayIo = new IntersectionObserver(function (list) {
+      list.forEach(function (en) { inView[en.target.getAttribute('data-time')] = en.isIntersecting; });
+      var cur = null;
+      bands.forEach(function (b) { if (inView[b.getAttribute('data-time')]) cur = b.getAttribute('data-time'); });
+      setTime(cur);
+    }, { rootMargin: '-40% 0px -59% 0px', threshold: 0 });
+    bands.forEach(function (b) { dayIo.observe(b); });
   }
 
   // ── 숫자 올라가기 ──
@@ -323,7 +362,7 @@
         io.unobserve(en.target);
         if (en.target.hasAttribute('data-count')) countUp(en.target); else en.target.classList.add('in');
       });
-    }, { rootMargin: '0px 0px -8% 0px' });
+    }, { rootMargin: '0px 0px -15% 0px', threshold: 0 });
     reveals.forEach(function (el) { io.observe(el); });
     counters.forEach(function (el) { io.observe(el); });
     setTimeout(function () { reveals.forEach(function (el) { el.classList.add('in'); }); }, M.revealFailsafeMs);

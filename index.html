@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<html lang="ko" data-theme="day" data-theme-key="twosky-theme" data-root="">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
@@ -14,101 +14,170 @@
 <link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script src="data.js" defer></script>
-<script src="sky.js" defer></script>
 <script src="app.js" defer></script>
 </head>
-<body>
+<body data-time="dawn">
 <a class="skip" href="#main">본문 바로가기</a>
-<canvas id="sky" class="sky" aria-hidden="true"></canvas>
-<div class="wrap">
 <header class="top">
-<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
-<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="motion.html">Motion Graphic</a><a href="all.html">전체</a></nav>
+<div class="top-in">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html" data-nav="work">Work</a><a href="game.html" data-nav="game">Game</a><a href="toy.html" data-nav="toy">Toy</a><a href="3d.html" data-nav="3d">3D</a><a href="motion.html" data-nav="motion">Motion Graphic</a><a href="all.html" data-nav="all">전체</a></nav>
 <div class="tools">
 <button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
-<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>밤 하늘로 바꾸기</span></button>
+</div>
 </div>
 </header>
 <main id="main">
-<section class="intro">
-<p class="edition">Twosky · 2026 · 작업물 40개</p>
+<section class="horizon" data-horizon aria-label="하루 시간표">
+<span class="stars" aria-hidden="true"></span>
+<span class="arc" aria-hidden="true"></span>
+<span class="orb" aria-hidden="true"></span>
+<nav class="dial" aria-label="시간대로 가기"><a class="dial-btn" href="#s-work" data-dial="work" data-orb="0.167"><b>07:00</b> Work</a><a class="dial-btn" href="#s-game" data-dial="game" data-orb="0.333"><b>13:00</b> Game</a><a class="dial-btn" href="#s-toy" data-dial="toy" data-orb="0.500"><b>18:30</b> Toy</a><a class="dial-btn" href="#s-3d" data-dial="3d" data-orb="0.667"><b>22:00</b> 3D</a><a class="dial-btn" href="#s-motion" data-dial="motion" data-orb="0.833"><b>02:00</b> Motion Graphic</a></nav>
+<span class="word" aria-hidden="true">Twosky</span>
+</section>
+<section class="ground">
+<div class="shell">
+<p class="edition">Twosky · 2026 · 작업물 36개</p>
 <h1 class="hero-title"><span class="hero-line">일하는 도구부터,</span><span class="hero-line">노는 세계까지.</span></h1>
 <p class="lede">Twosky는 하늘이 AI와 함께 만든 것들을 모아 두는 곳입니다.<br>회사에서 매일 쓰는 도구도, 주말에 만든 게임도 여기서 이어집니다.</p>
 <div class="hero-actions">
-<a class="btn btn--primary" href="all.html">전체 작업물 보기 <span aria-hidden="true">→</span></a>
-<button type="button" class="btn" data-pick hidden aria-haspopup="dialog"><span aria-hidden="true">✦</span> 아무거나 하나 뽑기</button>
+<a class="btn btn--sun" href="all.html">전체 작업물 보기 <span aria-hidden="true">→</span></a>
+<button type="button" class="btn btn--line" data-pick hidden aria-haspopup="dialog"><span aria-hidden="true">✦</span> 아무거나 하나 뽑기</button>
 </div>
-<ul class="stats" aria-label="작업물 수"><li class="stat stat--all"><b data-count="40">40</b><span>전체</span></li><li class="stat stat--live"><b data-count="14">14</b><span>공개</span></li><li class="stat stat--detail"><b data-count="6">6</b><span>구조도</span></li><li class="stat stat--next"><b data-count="2">2</b><span>만드는 중</span></li></ul>
+<ul class="stats" aria-label="작업물 수"><li class="stat stat--all"><b data-count="36">36</b><span>전체</span></li><li class="stat stat--live"><b data-count="11">11</b><span>공개</span></li><li class="stat stat--detail"><b data-count="6">6</b><span>구조도</span></li><li class="stat stat--next"><b data-count="1">1</b><span>만드는 중</span></li></ul>
+</div>
 </section>
-<section class="projects" aria-label="섹션">
-<a class="project project--work reveal" href="work.html" data-tilt>
-<div class="art art--work" aria-hidden="true">
-<span class="bp-file">flow.svg</span>
-<span class="bp-node bp-1"><b>1</b>조건을 적는다</span>
-<span class="bp-node bp-2"><b>2</b>프로그램이 검사</span>
-<span class="bp-node bp-3"><b>3</b>사람이 누른다</span>
-<span class="bp-caption">노동은 도구에게, 판단은 사람에게.</span>
+<div class="days">
+<nav class="rail" aria-label="이 쪽의 시간대"><ol class="rail-in"><li><a href="#s-work" data-rail="work"><b>07:00</b> WORK <small>아침</small></a></li><li><a href="#s-game" data-rail="game"><b>13:00</b> GAME <small>한낮</small></a></li><li><a href="#s-toy" data-rail="toy"><b>18:30</b> TOY <small>노을</small></a></li><li><a href="#s-3d" data-rail="3d"><b>22:00</b> 3D <small>밤</small></a></li><li><a href="#s-motion" data-rail="motion"><b>02:00</b> MOTION GRAPHIC <small>한밤</small></a></li></ol></nav>
+<section class="band band--work" id="s-work" data-time="work" aria-labelledby="h-work">
+<div class="shell">
+<header class="band-head reveal">
+<span class="band-time" aria-hidden="true">07:00</span>
+<div class="band-copy">
+<h2 id="h-work" tabindex="-1"><span class="band-no">01</span> Work <span class="band-sub">· 일하는 도구</span></h2>
+<p>상담 기록, 발송 명단, 품질 점검. 매주 반복되던 일을 AI와 함께 도구로 바꿨습니다. 구조도로 어떻게 돌아가는지 보여 드립니다.</p>
 </div>
-<div class="project-copy">
-<span class="number">01 / Work</span>
-<h2>Work</h2>
-<p><strong>일하는 도구.</strong> 상담 기록, 발송 명단, 품질 점검. 매주 반복되던 일을 AI와 함께 도구로 바꿨습니다. 구조도로 어떻게 돌아가는지 보여 드립니다.</p>
-<span class="enter">작업 13 · 만드는 중 1 <b aria-hidden="true">→</b></span>
+</header>
+<ul class="cards cards--two"><li class="card card--detail card--work reveal" id="w-list-extractor" data-section="work" data-status="private" data-detail data-name="발송 명단 추출 앱"><a class="card-link" href="work/list-extractor.html"><span class="cover-box"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">발송 명단 추출 앱</span></span></span><span class="card-line">
+<span class="card-name">발송 명단 추출 앱<span aria-hidden="true"> →</span></span>
+<span class="badge badge--detail">구조도</span>
+<span class="no" aria-hidden="true">01</span>
+</span><span class="card-note">조건을 적으면 AI가 조회문을 쓰고, 실행과 발송은 사람이 한다.</span></a></li><li class="card card--detail card--work reveal" id="w-qa-card-skill" data-section="work" data-status="private" data-detail data-name="상담 품질 카드 스킬"><a class="card-link" href="work/qa-card-skill.html"><span class="cover-box"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">상담 품질 카드 스킬</span></span></span><span class="card-line">
+<span class="card-name">상담 품질 카드 스킬<span aria-hidden="true"> →</span></span>
+<span class="badge badge--detail">구조도</span>
+<span class="no" aria-hidden="true">01</span>
+</span><span class="card-note">상담 기록을 넣으면 품질 코칭 카드 1건을 쓰는 AI 스킬.</span></a></li><li class="card card--detail card--work reveal" id="w-satisfaction" data-section="work" data-status="private" data-detail data-name="만족도 조사 발송 자동화"><a class="card-link" href="work/satisfaction.html"><span class="cover-box"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">만족도 조사 발송 자동화</span></span></span><span class="card-line">
+<span class="card-name">만족도 조사 발송 자동화<span aria-hidden="true"> →</span></span>
+<span class="badge badge--detail">구조도</span>
+<span class="no" aria-hidden="true">01</span>
+</span><span class="card-note">상담 이력 파일에서 만족도 조사 문자 발송 목록을 만든다.</span></a></li><li class="card card--detail card--work reveal" id="w-qa-brief" data-section="work" data-status="private" data-detail data-name="QA 주간 브리핑 대시보드"><a class="card-link" href="work/qa-brief.html"><span class="cover-box"><span class="cover cover--type cover--work" aria-hidden="true"><span class="cover-word">QA 주간 브리핑 대시보드</span></span></span><span class="card-line">
+<span class="card-name">QA 주간 브리핑 대시보드<span aria-hidden="true"> →</span></span>
+<span class="badge badge--detail">구조도</span>
+<span class="no" aria-hidden="true">01</span>
+</span><span class="card-note">매일 아침 점검 시트를 읽어 본부별 확인 화면으로 낸다.</span></a></li></ul>
+<a class="more" href="work.html">Work 14개 전부 보기 <span aria-hidden="true">→</span></a>
 </div>
-</a><a class="project project--game reveal" href="game.html" data-tilt>
-<div class="art art--game" aria-hidden="true">
-<span class="hud"><span>HI 650000</span><span>1P</span></span>
-<span class="pixel-bear" style="box-shadow:10px 0px 0 #c99a4b,20px 0px 0 #c99a4b,70px 0px 0 #c99a4b,80px 0px 0 #c99a4b,0px 10px 0 #c99a4b,10px 10px 0 #c99a4b,20px 10px 0 #c99a4b,30px 10px 0 #c99a4b,40px 10px 0 #c99a4b,50px 10px 0 #c99a4b,60px 10px 0 #c99a4b,70px 10px 0 #c99a4b,80px 10px 0 #c99a4b,90px 10px 0 #c99a4b,10px 20px 0 #c99a4b,20px 20px 0 #c99a4b,30px 20px 0 #c99a4b,40px 20px 0 #c99a4b,50px 20px 0 #c99a4b,60px 20px 0 #c99a4b,70px 20px 0 #c99a4b,80px 20px 0 #c99a4b,10px 30px 0 #c99a4b,20px 30px 0 #2a1d12,30px 30px 0 #c99a4b,40px 30px 0 #c99a4b,50px 30px 0 #c99a4b,60px 30px 0 #c99a4b,70px 30px 0 #2a1d12,80px 30px 0 #c99a4b,10px 40px 0 #c99a4b,20px 40px 0 #c99a4b,30px 40px 0 #c99a4b,40px 40px 0 #ecd3a0,50px 40px 0 #ecd3a0,60px 40px 0 #c99a4b,70px 40px 0 #c99a4b,80px 40px 0 #c99a4b,10px 50px 0 #c99a4b,20px 50px 0 #c99a4b,30px 50px 0 #ecd3a0,40px 50px 0 #2a1d12,50px 50px 0 #2a1d12,60px 50px 0 #ecd3a0,70px 50px 0 #c99a4b,80px 50px 0 #c99a4b,20px 60px 0 #c99a4b,30px 60px 0 #c99a4b,40px 60px 0 #ecd3a0,50px 60px 0 #ecd3a0,60px 60px 0 #c99a4b,70px 60px 0 #c99a4b,30px 70px 0 #c99a4b,40px 70px 0 #c99a4b,50px 70px 0 #c99a4b,60px 70px 0 #c99a4b"></span>
-<span class="press">PRESS START</span>
+</section><section class="band band--game" id="s-game" data-time="game" aria-labelledby="h-game">
+<div class="shell">
+<header class="band-head reveal">
+<span class="band-time" aria-hidden="true">13:00</span>
+<div class="band-copy">
+<h2 id="h-game" tabindex="-1"><span class="band-no">02</span> Game <span class="band-sub">· 노는 세계</span></h2>
+<p>구미호가 탄막을 피하고, 정규식으로 던전을 내려갑니다. 작고 빠르게 끝나는 게임들.</p>
 </div>
-<div class="project-copy">
-<span class="number">02 / Game</span>
-<h2>Game</h2>
-<p><strong>노는 세계.</strong> 곰이 꿀단지를 받고 구미호가 탄막을 피합니다. 휴대폰에서 바로 열리는 작은 게임들.</p>
-<span class="enter">작업 5 · 만드는 중 1 <b aria-hidden="true">→</b></span>
+</header>
+<ul class="cards cards--two"><li class="card card--game reveal" id="w-gumiho-shooter" data-section="game" data-status="live" data-name="구미호 슈팅"><a class="card-link" href="https://haneul-two.github.io/gumiho-shooter/" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/gumiho-shooter.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">구미호 슈팅<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">02</span>
+</span><span class="card-note">휴대폰 세로 화면 탄막 슈팅. HTML 파일 하나로 돌아간다.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--private card--game reveal" id="w-regex-dungeon" data-section="game" data-status="private" data-name="regex-dungeon"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">regex-dungeon</span></span></span><span class="card-line">
+<span class="card-name">regex-dungeon</span>
+<span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">02</span>
+</span><span class="card-note">정규식을 배우는 터미널 로그라이크. npm에 공개돼 npx 한 줄로 바로 시작한다.</span></div></li></ul>
+<a class="more" href="game.html">Game 2개 전부 보기 <span aria-hidden="true">→</span></a>
 </div>
-</a><a class="project project--toy reveal" href="toy.html" data-tilt>
-<div class="art art--toy" aria-hidden="true">
-<span class="block block-t">T</span><span class="block block-o">O</span><span class="block block-y">Y</span>
-<span class="toy-caption">눌러 보고, 돌려 보고, 쌓아 본다.</span>
+</section><section class="band band--toy" id="s-toy" data-time="toy" aria-labelledby="h-toy">
+<div class="shell">
+<header class="band-head reveal">
+<span class="band-time" aria-hidden="true">18:30</span>
+<div class="band-copy">
+<h2 id="h-toy" tabindex="-1"><span class="band-no">03</span> Toy <span class="band-sub">· 만지는 장난감</span></h2>
+<p>질병 지도, 인공 생명 정원, 레퍼런스 창고. 궁금한 것을 만져 볼 수 있게 만든 것들.</p>
 </div>
-<div class="project-copy">
-<span class="number">03 / Toy</span>
-<h2>Toy</h2>
-<p><strong>만지는 장난감.</strong> 질병 지도, 인공 생명 정원, 돌봄 계산기. 궁금한 것을 만져 볼 수 있게 만든 것들.</p>
-<span class="enter">작업 14 <b aria-hidden="true">→</b></span>
+</header>
+<ul class="cards cards--two"><li class="card card--toy reveal" id="w-disease-atlas" data-section="toy" data-status="live" data-name="Disease Atlas"><a class="card-link" href="https://disease-atlas-eta.vercel.app" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/disease-atlas.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">Disease Atlas<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">03</span>
+</span><span class="card-note">질병 80개를 인체 부위와 관계선으로 잇는 질병 지도.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--toy reveal" id="w-war-history-atlas" data-section="toy" data-status="live" data-name="지도로 읽는 전쟁사"><a class="card-link" href="https://github.com/Haneul-two/war-history-atlas" target="_blank" rel="noopener"><span class="cover-box"><span class="cover cover--type cover--toy" aria-hidden="true"><span class="cover-word">지도로 읽는 전쟁사</span></span></span><span class="card-line">
+<span class="card-name">지도로 읽는 전쟁사<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">03</span>
+</span><span class="card-note">전쟁 60개·사건 189개를 지도에서 찾고 원인·흐름·영향을 따라 읽는 역사 탐험 웹앱.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--toy reveal" id="w-care-navigator" data-section="toy" data-status="live" data-name="케어 내비게이터"><a class="card-link" href="https://carenavigator.vercel.app" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/care-navigator.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">케어 내비게이터<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">03</span>
+</span><span class="card-note">12개 질문으로 예상 장기요양 등급·혜택·본인부담금을 보여 준다.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--toy reveal" id="w-alife-garden" data-section="toy" data-status="live" data-name="인공 생명 정원"><a class="card-link" href="https://haneul-two.github.io/alife-garden/" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/alife-garden.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">인공 생명 정원<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">03</span>
+</span><span class="card-note">행동 규칙 없이 사냥·무리·종 분화가 생기는 인공 생명 시뮬레이터.</span><span class="sr"> (새 탭)</span></a></li></ul>
+<a class="more" href="toy.html">Toy 14개 전부 보기 <span aria-hidden="true">→</span></a>
 </div>
-</a><a class="project project--3d reveal" href="3d.html" data-tilt>
-<div class="art art--3d" aria-hidden="true">
-<span class="scene"><span class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
-<span class="axis">x · y · z</span>
+</section><section class="band band--3d" id="s-3d" data-time="3d" aria-labelledby="h-3d">
+<div class="shell">
+<header class="band-head reveal">
+<span class="band-time" aria-hidden="true">22:00</span>
+<div class="band-copy">
+<h2 id="h-3d" tabindex="-1"><span class="band-no">04</span> 3D <span class="band-sub">· 입체 실험</span></h2>
+<p>입자 6만 5천 개, 터지는 보물상자, 작은 도시. 화면 속 공간을 다루는 실험.</p>
 </div>
-<div class="project-copy">
-<span class="number">04 / 3D</span>
-<h2>3D</h2>
-<p><strong>입체 실험.</strong> 입자 6만 5천 개, 터지는 보물상자, 작은 도시. 화면 속 공간을 다루는 실험.</p>
-<span class="enter">작업 5 <b aria-hidden="true">→</b></span>
+</header>
+<ul class="cards cards--two"><li class="card card--3d reveal" id="w-microbot-morph" data-section="3d" data-status="live" data-name="입자 모핑"><a class="card-link" href="https://haneul-two.github.io/microbot-morph/" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/microbot-morph.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">입자 모핑<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">입자 65,536개가 14가지 형상 사이를 날아 다시 맺힌다.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--3d reveal" id="w-portfolio-bear" data-section="3d" data-status="live" data-name="포트폴리오 입자 곰"><a class="card-link" href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/portfolio-bear.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">포트폴리오 입자 곰<span aria-hidden="true"> ↗</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">읽는 구간마다 입자가 곰·별자리·하늘로 모양을 바꾸는 소개 사이트.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--private card--3d reveal" id="w-midnight-store" data-section="3d" data-status="private" data-name="심야 편의점 03:17"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">심야 편의점 03:17</span></span></span><span class="card-line">
+<span class="card-name">심야 편의점 03:17</span>
+<span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">비 오는 새벽 편의점에서 물건 여섯 개를 관찰하는 3D 웹 전시.</span></div></li><li class="card card--private card--3d reveal" id="w-chest-highlight" data-section="3d" data-status="private" data-name="보물상자 하이라이트 연출"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--3d" aria-hidden="true"><span class="cover-word">보물상자 하이라이트 연출</span></span></span><span class="card-line">
+<span class="card-name">보물상자 하이라이트 연출</span>
+<span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">04</span>
+</span><span class="card-note">등급 상승 → 폭발 → 보상 공개까지 이어지는 모바일 게임식 연출.</span></div></li></ul>
+<a class="more" href="3d.html">3D 5개 전부 보기 <span aria-hidden="true">→</span></a>
 </div>
-</a><a class="project project--motion reveal" href="motion.html" data-tilt>
-<div class="art art--motion" aria-hidden="true">
-<span class="mo-frame"><span class="mo-play"></span></span>
-<span class="mo-track"><span class="mo-head"></span></span>
-<span class="mo-time">00:00 / 00:18 · 60fps</span>
+</section><section class="band band--motion" id="s-motion" data-time="motion" aria-labelledby="h-motion">
+<div class="shell">
+<header class="band-head reveal">
+<span class="band-time" aria-hidden="true">02:00</span>
+<div class="band-copy">
+<h2 id="h-motion" tabindex="-1"><span class="band-no">05</span> Motion Graphic <span class="band-sub">· 움직이는 그림</span></h2>
+<p>코드로 짓고 코드로 찍은 3D 모션그래픽. 첫 편은 서울의 밤입니다.</p>
 </div>
-<div class="project-copy">
-<span class="number">05 / Motion Graphic</span>
-<h2>Motion Graphic</h2>
-<p><strong>움직이는 그림.</strong> 코드로 짓고 코드로 찍은 3D 모션그래픽. 첫 편은 서울의 밤입니다.</p>
-<span class="enter">작업 1 <b aria-hidden="true">→</b></span>
+</header>
+<ul class="cards cards--two"><li class="card card--motion reveal" id="w-seoul-night" data-section="motion" data-status="live" data-name="서울의 밤"><a class="card-link" href="motion.html#w-seoul-night"><span class="cover-box"><img class="cover" src="covers/seoul-night.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
+<span class="card-name">서울의 밤<span aria-hidden="true"> ▶</span></span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">05</span>
+</span><span class="card-note">입자가 모여 서울이 되고, 궁에서 한강, 남산까지 18초 동안 날아갑니다.</span></a></li></ul>
+<a class="more" href="motion.html">Motion Graphic 1개 전부 보기 <span aria-hidden="true">→</span></a>
 </div>
-</a>
 </section>
+</div>
 <dialog class="pick" id="pick" aria-labelledby="pick-title">
 <div class="pick-box">
 <p class="pick-eyebrow" id="pick-title">오늘 열어 볼 작업물</p>
 <div class="pick-card" data-pick-card></div>
 <div class="pick-actions">
-<a class="btn btn--primary" data-pick-open href="#" target="_blank" rel="noopener">열기 ↗<span class="sr"> (새 탭)</span></a>
+<a class="btn btn--primary" data-pick-open href="#" target="_blank" rel="noopener"><span data-pick-label>열기 ↗</span><span class="sr" data-pick-newtab> (새 탭)</span></a>
 <button type="button" class="btn" data-pick-again>다시 뽑기</button>
 <button type="button" class="btn btn--ghost" data-pick-close>닫기</button>
 </div>
@@ -116,11 +185,12 @@
 </dialog>
 </main>
 <footer class="foot">
+<div class="foot-in">
 <span>© 2026 Twosky · 하늘</span>
 <span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
 <span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
-</footer>
 </div>
+</footer>
 <dialog class="palette" id="palette" aria-label="작업물 검색">
 <div class="palette-box">
 <label class="sr" for="palette-q">작업물·섹션 검색</label>

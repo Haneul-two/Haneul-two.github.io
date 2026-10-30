@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="">
+<html lang="ko" data-theme="day" data-theme-key="twosky-theme" data-root="">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
@@ -7,86 +7,62 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Game · Twosky</title>
-<meta name="description" content="곰이 꿀단지를 받고 구미호가 탄막을 피합니다. 휴대폰에서 바로 열리는 작은 게임들.">
+<meta name="description" content="구미호가 탄막을 피하고, 정규식으로 던전을 내려갑니다. 작고 빠르게 끝나는 게임들.">
 <meta name="color-scheme" content="dark light">
 <script src="theme.js"></script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script src="data.js" defer></script>
-<script src="sky.js" defer></script>
 <script src="app.js" defer></script>
 </head>
-<body>
+<body data-time="game">
 <a class="skip" href="#main">본문 바로가기</a>
-<canvas id="sky" class="sky" aria-hidden="true"></canvas>
-<div class="wrap">
 <header class="top">
-<a class="brand" href="index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
-<nav class="nav" aria-label="섹션"><a href="work.html">Work</a><a href="game.html" aria-current="page">Game</a><a href="toy.html">Toy</a><a href="3d.html">3D</a><a href="motion.html">Motion Graphic</a><a href="all.html">전체</a></nav>
+<div class="top-in">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="work.html" data-nav="work">Work</a><a href="game.html" data-nav="game" aria-current="page">Game</a><a href="toy.html" data-nav="toy">Toy</a><a href="3d.html" data-nav="3d">3D</a><a href="motion.html" data-nav="motion">Motion Graphic</a><a href="all.html" data-nav="all">전체</a></nav>
 <div class="tools">
 <button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
-<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>밤 하늘로 바꾸기</span></button>
+</div>
 </div>
 </header>
 <main id="main">
+<div class="band band--game band--page">
+<div class="shell">
 <section class="sec-head sec-head--game">
 <div class="sec-copy">
-<p class="number">02 / Game</p>
+<p class="number"><span class="sec-time">13:00</span> 02 / 한낮</p>
 <h1>Game</h1>
 <p class="sec-sub">노는 세계</p>
-<p class="sec-intro">곰이 꿀단지를 받고 구미호가 탄막을 피합니다. 휴대폰에서 바로 열리는 작은 게임들.</p>
+<p class="sec-intro">구미호가 탄막을 피하고, 정규식으로 던전을 내려갑니다. 작고 빠르게 끝나는 게임들.</p>
 </div>
 <div class="art art--game" aria-hidden="true">
 <span class="hud"><span>HI 650000</span><span>1P</span></span>
-<span class="pixel-bear" style="box-shadow:10px 0px 0 #c99a4b,20px 0px 0 #c99a4b,70px 0px 0 #c99a4b,80px 0px 0 #c99a4b,0px 10px 0 #c99a4b,10px 10px 0 #c99a4b,20px 10px 0 #c99a4b,30px 10px 0 #c99a4b,40px 10px 0 #c99a4b,50px 10px 0 #c99a4b,60px 10px 0 #c99a4b,70px 10px 0 #c99a4b,80px 10px 0 #c99a4b,90px 10px 0 #c99a4b,10px 20px 0 #c99a4b,20px 20px 0 #c99a4b,30px 20px 0 #c99a4b,40px 20px 0 #c99a4b,50px 20px 0 #c99a4b,60px 20px 0 #c99a4b,70px 20px 0 #c99a4b,80px 20px 0 #c99a4b,10px 30px 0 #c99a4b,20px 30px 0 #2a1d12,30px 30px 0 #c99a4b,40px 30px 0 #c99a4b,50px 30px 0 #c99a4b,60px 30px 0 #c99a4b,70px 30px 0 #2a1d12,80px 30px 0 #c99a4b,10px 40px 0 #c99a4b,20px 40px 0 #c99a4b,30px 40px 0 #c99a4b,40px 40px 0 #ecd3a0,50px 40px 0 #ecd3a0,60px 40px 0 #c99a4b,70px 40px 0 #c99a4b,80px 40px 0 #c99a4b,10px 50px 0 #c99a4b,20px 50px 0 #c99a4b,30px 50px 0 #ecd3a0,40px 50px 0 #2a1d12,50px 50px 0 #2a1d12,60px 50px 0 #ecd3a0,70px 50px 0 #c99a4b,80px 50px 0 #c99a4b,20px 60px 0 #c99a4b,30px 60px 0 #c99a4b,40px 60px 0 #ecd3a0,50px 60px 0 #ecd3a0,60px 60px 0 #c99a4b,70px 60px 0 #c99a4b,30px 70px 0 #c99a4b,40px 70px 0 #c99a4b,50px 70px 0 #c99a4b,60px 70px 0 #c99a4b"></span>
+<span class="pixel-fox" style="box-shadow:0px 0px 0 #e8772e,90px 0px 0 #e8772e,0px 10px 0 #e8772e,10px 10px 0 #e8772e,80px 10px 0 #e8772e,90px 10px 0 #e8772e,0px 20px 0 #e8772e,10px 20px 0 #e8772e,20px 20px 0 #e8772e,30px 20px 0 #e8772e,40px 20px 0 #e8772e,50px 20px 0 #e8772e,60px 20px 0 #e8772e,70px 20px 0 #e8772e,80px 20px 0 #e8772e,90px 20px 0 #e8772e,0px 30px 0 #e8772e,10px 30px 0 #e8772e,20px 30px 0 #2a1d12,30px 30px 0 #e8772e,40px 30px 0 #e8772e,50px 30px 0 #e8772e,60px 30px 0 #e8772e,70px 30px 0 #2a1d12,80px 30px 0 #e8772e,90px 30px 0 #e8772e,0px 40px 0 #fbe7d0,10px 40px 0 #e8772e,20px 40px 0 #e8772e,30px 40px 0 #e8772e,40px 40px 0 #e8772e,50px 40px 0 #e8772e,60px 40px 0 #e8772e,70px 40px 0 #e8772e,80px 40px 0 #e8772e,90px 40px 0 #fbe7d0,10px 50px 0 #fbe7d0,20px 50px 0 #fbe7d0,30px 50px 0 #e8772e,40px 50px 0 #e8772e,50px 50px 0 #e8772e,60px 50px 0 #e8772e,70px 50px 0 #fbe7d0,80px 50px 0 #fbe7d0,20px 60px 0 #fbe7d0,30px 60px 0 #fbe7d0,40px 60px 0 #2a1d12,50px 60px 0 #2a1d12,60px 60px 0 #fbe7d0,70px 60px 0 #fbe7d0,40px 70px 0 #fbe7d0,50px 70px 0 #fbe7d0"></span>
 <span class="press">PRESS START</span>
 </div>
 </section>
-<ul class="cards"><li class="card card--game reveal" id="w-honey-catch" data-section="game" data-status="live" data-name="토닥곰 꿀단지 받기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/honey-catch.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/honey-catch.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
-<span class="badge badge--live">공개</span>
-<span class="card-name">토닥곰 꿀단지 받기<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">떨어지는 꿀단지를 곰이 받아 내는 미니게임.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--game reveal" id="w-tamagotchi" data-section="game" data-status="live" data-name="토닥곰 키우기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/tamagotchi.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/tamagotchi.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
-<span class="badge badge--live">공개</span>
-<span class="card-name">토닥곰 키우기<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">아기곰부터 노년곰까지 돌보며 키우는 다마고치.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--game reveal" id="w-honey-throw" data-section="game" data-status="live" data-name="토닥곰 던지기"><a class="card-link" href="https://haneul-two.github.io/todak-bear/play/honey-throw.html" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/honey-throw.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
-<span class="badge badge--live">공개</span>
-<span class="card-name">토닥곰 던지기<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">새총처럼 곰을 당겼다 놓아 꿀단지를 항아리에 넣는 물리 퍼즐.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--game reveal" id="w-gumiho-shooter" data-section="game" data-status="live" data-name="구미호 슈팅"><a class="card-link" href="https://haneul-two.github.io/gumiho-shooter/" target="_blank" rel="noopener" data-tilt><img class="cover" src="covers/gumiho-shooter.webp" alt="" width="480" height="300" loading="lazy" decoding="async">
-<span class="card-body">
-<span class="badge badge--live">공개</span>
+<ul class="cards cards--two"><li class="card card--game reveal" id="w-gumiho-shooter" data-section="game" data-status="live" data-name="구미호 슈팅"><a class="card-link" href="https://haneul-two.github.io/gumiho-shooter/" target="_blank" rel="noopener"><span class="cover-box"><img class="cover" src="covers/gumiho-shooter.webp" alt="" width="480" height="320" loading="lazy" decoding="async"></span><span class="card-line">
 <span class="card-name">구미호 슈팅<span aria-hidden="true"> ↗</span></span>
-<span class="card-note">휴대폰 세로 화면 탄막 슈팅. HTML 파일 하나로 돌아간다.</span>
-<span class="card-cta">열기 ↗</span><span class="sr"> (새 탭)</span>
-</span></a></li><li class="card card--private card--game reveal" id="w-regex-dungeon" data-section="game" data-status="private" data-name="regex-dungeon"><div class="card-link"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">regex-dungeon</span></span>
-<span class="card-body">
-<span class="badge badge--private">비공개</span>
+<span class="badge badge--live">공개</span>
+<span class="no" aria-hidden="true">02</span>
+</span><span class="card-note">휴대폰 세로 화면 탄막 슈팅. HTML 파일 하나로 돌아간다.</span><span class="sr"> (새 탭)</span></a></li><li class="card card--private card--game reveal" id="w-regex-dungeon" data-section="game" data-status="private" data-name="regex-dungeon"><div class="card-link"><span class="cover-box"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">regex-dungeon</span></span></span><span class="card-line">
 <span class="card-name">regex-dungeon</span>
-<span class="card-note">정규식을 배우는 터미널 로그라이크. npm에 공개돼 npx 한 줄로 바로 시작한다.</span>
-
-</span></div></li><li class="card card--next card--game reveal" id="w-guild-board" data-section="game" data-status="next" data-name="구미호 길드 현황판"><div class="card-link"><span class="cover cover--type cover--game" aria-hidden="true"><span class="cover-word">구미호 길드 현황판</span></span>
-<span class="card-body">
-<span class="badge badge--next">만드는 중</span>
-<span class="card-name">구미호 길드 현황판</span>
-<span class="card-note">모바일 게임 동맹 길드원 현황판. 설계 완료, 구현 예정.</span>
-
-</span></div></li></ul>
+<span class="badge badge--private">비공개</span>
+<span class="no" aria-hidden="true">02</span>
+</span><span class="card-note">정규식을 배우는 터미널 로그라이크. npm에 공개돼 npx 한 줄로 바로 시작한다.</span></div></li></ul>
+</div>
+</div>
 </main>
 <footer class="foot">
+<div class="foot-in">
 <span>© 2026 Twosky · 하늘</span>
 <span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
 <span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
-</footer>
 </div>
+</footer>
 <dialog class="palette" id="palette" aria-label="작업물 검색">
 <div class="palette-box">
 <label class="sr" for="palette-q">작업물·섹션 검색</label>

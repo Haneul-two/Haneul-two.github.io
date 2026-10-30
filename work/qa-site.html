@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="night" data-theme-key="twosky-theme" data-root="../">
+<html lang="ko" data-theme="day" data-theme-key="twosky-theme" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39;; font-src &#39;self&#39;; connect-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
@@ -14,22 +14,23 @@
 <link rel="preload" href="../fonts/gasoek-one.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="../style.css">
 <script src="../data.js" defer></script>
-<script src="../sky.js" defer></script>
 <script src="../app.js" defer></script>
 </head>
-<body>
+<body data-time="work">
 <a class="skip" href="#main">본문 바로가기</a>
-<canvas id="sky" class="sky" aria-hidden="true"></canvas>
-<div class="wrap">
 <header class="top">
-<a class="brand" href="../index.html"><span class="mark" aria-hidden="true">T</span>Twosky</a>
-<nav class="nav" aria-label="섹션"><a href="../work.html" aria-current="true">Work</a><a href="../game.html">Game</a><a href="../toy.html">Toy</a><a href="../3d.html">3D</a><a href="../motion.html">Motion Graphic</a><a href="../all.html">전체</a></nav>
+<div class="top-in">
+<a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span>Twosky</a>
+<nav class="nav" aria-label="섹션"><a href="../work.html" data-nav="work" aria-current="true">Work</a><a href="../game.html" data-nav="game">Game</a><a href="../toy.html" data-nav="toy">Toy</a><a href="../3d.html" data-nav="3d">3D</a><a href="../motion.html" data-nav="motion">Motion Graphic</a><a href="../all.html" data-nav="all">전체</a></nav>
 <div class="tools">
 <button type="button" class="tool tool--search" data-open-palette hidden aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K /"><span>검색</span><kbd class="kbd" data-kbd>Ctrl K</kbd></button>
-<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>낮 하늘로 바꾸기</span></button>
+<button type="button" class="tool tool--theme" data-theme-toggle hidden><span class="theme-icon" aria-hidden="true"></span><span class="sr" data-theme-label>밤 하늘로 바꾸기</span></button>
+</div>
 </div>
 </header>
 <main id="main">
+<div class="band band--work band--page">
+<div class="shell shell--narrow">
 <nav class="crumb" aria-label="위치"><a href="../work.html">Work</a><span aria-hidden="true"> / </span>구조도</nav>
 <article class="detail">
 <header class="d-head">
@@ -132,13 +133,16 @@
 <a href="../work.html">Work 목록으로</a>
 <a href="list-extractor.html" rel="next">발송 명단 추출 앱 →</a>
 </nav>
+</div>
+</div>
 </main>
 <footer class="foot">
+<div class="foot-in">
 <span>© 2026 Twosky · 하늘</span>
 <span class="foot-font">글꼴 Gasoek One · Pretendard (SIL OFL 1.1)</span>
 <span class="foot-links"><a href="https://twosky-portfolio.vercel.app" target="_blank" rel="noopener">소개 ↗<span class="sr"> (새 탭)</span></a><a href="https://github.com/Haneul-two" target="_blank" rel="noopener">GitHub ↗<span class="sr"> (새 탭)</span></a></span>
-</footer>
 </div>
+</footer>
 <dialog class="palette" id="palette" aria-label="작업물 검색">
 <div class="palette-box">
 <label class="sr" for="palette-q">작업물·섹션 검색</label>
